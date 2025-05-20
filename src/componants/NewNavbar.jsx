@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import logo from '../assets/cmdlogo.svg';
 
 const NewNavbar = () => {
   return (
@@ -9,7 +10,7 @@ const NewNavbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="text-3xl font-bold text-gray-800 flex items-center">
-            <img src='src/assets/cmdlogo.svg' width={60} height={60}/>
+            <img src={logo} width={60} height={60}/>
             <span>JEW Pvt. Ltd.</span>
             <sup className="text-xs align-super ml-1">®</sup>
           </div>
