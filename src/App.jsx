@@ -1,11 +1,6 @@
 /* File: App.js */
 import React from 'react';
-import Navbar from './componants/Navbar.jsx'
-import Hero from './componants/Hero.jsx'
-import Stats from './componants/State.jsx'
-import Features from './componants/Features.jsx'
-import Portfolio from './componants/Portfolio.jsx'
-import PaymentMethods from './componants/Payment.jsx'
+
 import Footer from './componants/Footer'
 import NewNavbar from './componants/NewNavbar.jsx';
 import Carousel from './componants/Carousel.jsx';
