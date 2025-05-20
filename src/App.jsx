@@ -14,7 +14,7 @@ import OurProjects from './componants/OurProjects.jsx';
 import ConsultationForm from './componants/ConsultationForm.jsx';
 import ContactCard from './componants/ContactCard.jsx';
 import WhyChooseUs from './componants/WhyChooseUs.jsx';
-// import StatsSection from './componants/StatsSection.jsx';
+import StatsSection from './componants/StatsSection.jsx';
 
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
       <WhyChooseUs/>
       <ContactCard/>
       <ConsultationForm/>
-      {/* <StatsSection/> */}
+      <StatsSection/>
     
     
       <Footer />
