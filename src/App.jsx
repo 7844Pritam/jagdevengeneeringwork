@@ -1,44 +1,21 @@
-/* File: App.js */
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage.jsx';
+import OurDirectorPage from './pages/OurDirectorPage.jsx';
+import Layout from './componants/Layout.jsx';
+import CompanyProfile from './pages/company_profile/CompanyProfile.jsx';
+import CompanyProfilePage from './pages/CompanyProfilePage.jsx';
 
-import Footer from './componants/Footer'
-import NewNavbar from './componants/NewNavbar.jsx';
-import Carousel from './componants/Carousel.jsx';
-import AboutSection from './componants/AboutSection.jsx';
-import PEBSection from './componants/PEBSection.jsx';
-import BenefitsSection from './componants/BenefitsSection.jsx';
-import ServicesSection from './componants/ServicesSection.jsx';
-import WorkProcess from './componants/WorkProcess.jsx';
-import IndustriesWeServe from './componants/IndustriesWeServe.jsx';
-import OurProjects from './componants/OurProjects.jsx';
-import ConsultationForm from './componants/ConsultationForm.jsx';
-import ContactCard from './componants/ContactCard.jsx';
-import WhyChooseUs from './componants/WhyChooseUs.jsx';
-import StatsSection from './componants/StatsSection.jsx';
-
-
-const App = () => {
+function App() {
   return (
-    <div className="">
-      {/* <Navbar /> */}
-      <NewNavbar/>
-      <Carousel/>
-      <AboutSection/>
-      <PEBSection/>
-      <BenefitsSection/>
-      <ServicesSection/>
-      <WorkProcess/>
-      <IndustriesWeServe/>
-      <OurProjects/>
-      <WhyChooseUs/>
-      <ContactCard/>
-      <ConsultationForm/>
-      <StatsSection/>
-    
-    
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<LandingPage />} />
+        <Route path="directors" element={<OurDirectorPage />} />
+        <Route path="profile" element={<CompanyProfilePage />} />
+      </Route>
+    </Routes>
   );
-};
+}
 
 export default App;

@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import logo from '../assets/cmdlogo.svg';
 
 const NewNavbar = () => {
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+
+  const toggleAboutDropdown = () => {
+    setIsAboutOpen(!isAboutOpen);
+  };
+
+  const handleHomeClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <header className="w-full shadow-md">
       {/* Top Bar */}
       <div className="flex items-center justify-between px-6 py-4 bg-white">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={handleHomeClick}
+        >
           <div className="text-3xl font-bold text-gray-800 flex items-center">
-            <img src={logo} width={60} height={60}/>
+            <img src={logo} width={60} height={60} alt="JEW Pvt. Ltd. Logo" />
             <span>JEW Pvt. Ltd.</span>
             <sup className="text-xs align-super ml-1">®</sup>
           </div>
         </div>
 
-        {/* Contact Info */}
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <div className="bg-[#f18e02] rounded-full p-2 text-white">
@@ -45,14 +57,31 @@ const NewNavbar = () => {
       </div>
 
       {/* Bottom Navbar */}
-       <nav className="bg-[#f18e02] px-6 py-3">
+      <nav className="bg-[#f18e02] px-6 py-3">
         <div className="flex justify-between items-center">
           {/* Empty space to align items right */}
           <div></div>
           {/* Menu items */}
-          <ul className="flex items-center gap-8 font-bold text-white text-sm uppercase">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">About <span>▼</span></li>
+          <ul className="flex items-center gap-8 font-bold text-white text-sm ">
+            <li className="cursor-pointer" onClick={handleHomeClick}>Home</li>
+           <li
+  className="relative cursor-pointer"
+  onMouseEnter={() => setIsAboutOpen(true)}
+  onMouseLeave={() => setIsAboutOpen(false)}
+>
+  About <span>▼</span>
+  {isAboutOpen && (
+    <ul className="absolute z-50 top-full left-0  bg-white text-black rounded shadow-lg w-48">
+      <li className="px-4 py-2 hover:bg-gray-100">
+        <a href="/directors" className="block">Our Director</a>
+      </li>
+      <li className="px-4 py-2 hover:bg-gray-100">
+        <a href="/profile" className="block">Company Profile</a>
+      </li>
+    </ul>
+  )}
+</li>
+
             <li className="cursor-pointer">Our Services <span>▼</span></li>
             <li className="cursor-pointer">Why JWE <span>▼</span></li>
             <li className="cursor-pointer">Our Projects</li>

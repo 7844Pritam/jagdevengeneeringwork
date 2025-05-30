@@ -6,25 +6,26 @@ import {
   Headphones
 } from "lucide-react";
 import React from "react";
+import MyHeading from "./MyHeadaing";
 
 const features = [
   {
-    icon: <Home className="text-green-400 w-10 h-10" />,
+    icon: <Home className="text-orange-400 w-10 h-10" />,
     title: "Efficiency",
     desc: "We focus on eco-friendly materials and practices to enhance sustainability without compromising quality.",
   },
   {
-    icon: <BadgeCheck className="text-green-400 w-10 h-10" />,
+    icon: <BadgeCheck className="text-orange-400 w-10 h-10" />,
     title: "Trust & Warranty",
     desc: "Your satisfaction is our priority. We provide personalized solutions tailored to your needs.",
   },
   {
-    icon: <ThumbsUp className="text-green-400 w-10 h-10" />,
+    icon: <ThumbsUp className="text-orange-400 w-10 h-10" />,
     title: "High Quality Work",
     desc: "Every aspect of the project is carefully planned and executed to ensure accuracy and perfection.",
   },
   {
-    icon: <Headphones className="text-green-400 w-10 h-10" />,
+    icon: <Headphones className="text-orange-400 w-10 h-10" />,
     title: "24*7 Support",
     desc: "Jagdev Engineering Works is always just a call away to ensure your experience is smooth and hassle-free.",
   },
@@ -46,11 +47,12 @@ const item = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-[#f3f5f1] py-16 px-6">
+    <section className="bg-white py-16 px-6">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-green-950 mb-12">
-          Why Choose Us
-        </h2>
+      
+                 <MyHeading text={"Why Choose Us"} color={"black"}/>
+
+        
 
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"

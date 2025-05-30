@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import React from "react";
+import { FaHouse } from "react-icons/fa6";
+import logo from '../assets/cmdlogo.svg'
 export default function Footer() {
   return (
-    <footer className="bg-[#0F2F05] text-white font-sans">
+    <footer className="bg-white text-black font-sans">
       {/* Top Office Locations Section */}
-      <div className="grid  grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left py-10 px-4 md:px-16 bg-[#0F2F05]">
+      <div className="grid  grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left py-10 px-4 md:px-16 bg-white">
         {[
           {
             title: "Corporate Office",
@@ -27,8 +29,8 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: idx * 0.2 }}
           >
-            <div className="bg-lime-400 p-4 rounded-2xl mb-2">
-              <FaMapMarkerAlt className="text-3xl text-white" />
+            <div className="bg-orange-400 p-4 rounded-2xl mb-2">
+              <FaHouse  className="text-3xl text-white" />
             </div>
             <h3 className="font-bold text-lg mb-1">{item.title}</h3>
             <p className="text-sm whitespace-pre-line">{item.address}</p>
@@ -48,11 +50,11 @@ export default function Footer() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <img src="/logo.png" alt="Jagdev Engineering Works" className="w-40 mb-4" />
-          <p className="text-white/90">
+          <img src={logo} alt="Jagdev Engineering Works" className="w-10 mb-4" />
+          <p className="text-black/90">
             At Jagdev Engineering Works, we specialize in high-quality roofing solutions tailored to meet the needs of residential, commercial, and industrial projects.
           </p>
-          <div className="flex space-x-4 mt-4 text-lime-400">
+          <div className="flex space-x-4 mt-10 text-orange-400">
             <FaFacebookF />
             <FaLinkedinIn />
             <FaInstagram />
@@ -66,7 +68,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h4 className="font-semibold text-lg mb-2">Quick Links</h4>
-          <ul className="space-y-1 text-white/80">
+          <ul className="space-y-1 text-black/80">
             <li>• Home</li>
             <li>• About Us</li>
             <li>• Services</li>
@@ -81,7 +83,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h4 className="font-semibold text-lg mb-2">Policies</h4>
-          <ul className="space-y-1 text-white/80">
+          <ul className="space-y-1 text-black/80">
             <li>• Privacy Policy</li>
             <li>• Term & Conditions</li>
           </ul>
@@ -106,7 +108,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-lime-400/20 mt-4 py-6 text-center text-sm text-white/70">
+      <div className="border-t border-lime-400/20 mt-4 py-6 text-center text-sm text-black/70">
         Copyright © 2025 Difmo Pvt. Ltd. All rights reserved.
       </div>
     </footer>

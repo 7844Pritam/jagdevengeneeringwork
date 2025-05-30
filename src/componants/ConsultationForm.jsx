@@ -3,12 +3,12 @@ import React from "react";
 
 export default function ConsultationForm() {
   return (
-    <div className="bg-[#f0f8e4] py-16 px-4">
+    <div className="bg-[#fffdf4] py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto bg-[#f1f2ee] rounded-[40px] px-10 py-16 flex flex-col md:flex-row justify-between gap-10"
+        className="max-w-7xl mx-auto bg-white rounded-[40px] px-10 py-16 flex flex-col md:flex-row justify-between gap-10"
       >
         {/* Left Content */}
         <div className="max-w-md">

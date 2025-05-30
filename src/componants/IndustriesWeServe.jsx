@@ -26,7 +26,7 @@ const industries = [
 
 const IndustriesWeServe = () => {
 return (
-    <section className="bg-[#F3FAEE] py-16 px-4 md:px-12 lg:px-24 text-left">
+    <section className="bg-white py-16 px-4 md:px-12 lg:px-24 text-left">
         <div className="max-w-7xl mx-auto">
             <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
                 JAGDEV ENGINEERING WORKS
@@ -42,7 +42,7 @@ return (
                         key={index}
                         className="flex items-center gap-2 text-[#1C2B0F] font-medium text-base"
                     >
-                        <FaCheckCircle className="text-[#7ED957]" />
+                        <FaCheckCircle className="text-orange-400" />
                         {item}
                     </div>
                 ))}

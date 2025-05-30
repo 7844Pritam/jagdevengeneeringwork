@@ -8,7 +8,7 @@ const ContactCard = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-[#f0fae9] py-10 px-6 flex justify-center items-center"
+      className="bg-white py-10 px-6 flex justify-center items-center"
     >
       <div className="bg-white rounded-3xl flex flex-col md:flex-row shadow-lg overflow-hidden max-w-6xl w-full">
         {/* Image */}

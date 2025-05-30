@@ -1,10 +1,11 @@
 import React from "react";
 import BuildingImg from "../assets/about-2.jpg"; // Replace with your actual image path
 import StructureImg from "../assets/about-2.jpg"; // Replace with your actual image path
+import MyHeading from "./MyHeadaing";
 
 const AboutSection = () => {
   return (
-    <section className="bg-[#f6ffef] px-6 py-16 md:px-20 lg:px-32">
+    <section className="bg-white px-6 py-16 md:px-20 lg:px-32">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left: Images */}
         <div className="relative w-full md:w-1/2">
