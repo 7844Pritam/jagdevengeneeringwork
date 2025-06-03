@@ -1,63 +1,96 @@
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import React from "react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
-import logo from '../assets/cmdlogo.svg'
+import React from "react";
+import logo from '../assets/cmdlogo.svg';
+
+// Locations data
+const locations = [
+  {
+    title: "Corporate Office",
+    address: "1/844 Vardan Khand Sector 1\nGomtinagar Lucknow, 226010.",
+  },
+  {
+    title: "Plant 1",
+    address: "Khasara No.- 86 Daud Nargar, Near Kisan Path, Lucknow",
+  },
+  {
+    title: "Plant 2",
+    address: "Chorpa Kala Market, Mau U.P India.",
+  },
+];
+
+// Quick Links with URLs
+const quickLinks = [
+  { name: "Home", url: "/" },
+  { name: "About Us", url: "/about" },
+  { name: "Services", url: "/services" },
+  { name: "Contact Us", url: "/contact" },
+];
+
+// Policies with URLs
+const policies = [
+  { name: "Privacy Policy", url: "/privacy-policy" },
+  { name: "Terms & Conditions", url: "/terms-conditions" },
+];
+
+// Social icons with URLs
+const socialIcons = [
+  { Icon: FaFacebookF, url: "https://facebook.com/yourpage" },
+  { Icon: FaLinkedinIn, url: "https://linkedin.com/company/yourcompany" },
+  { Icon: FaInstagram, url: "https://instagram.com/yourprofile" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-white text-black font-sans">
-      {/* Top Office Locations Section */}
-      <div className="grid  grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left py-10 px-4 md:px-16 bg-white">
-        {[
-          {
-            title: "Corporate Office",
-            address: "1/844 Vardan Khand Sector 1\nGomtinagar Lucknow, 226010.",
-          },
-          {
-            title: "Plant 1",
-            address: "Khasara No.- 86 Daud Nargar,Near Kisan Path, Lucknow",
-          },
-          {
-            title: "Plant 2",
-            address: "Chorpa Kala Market, Mau U.P India.",
-          },
-        ].map((item, idx) => (
+    <footer className="bg-gray-50 text-gray-800 font-sans transition-all">
+      {/* Locations */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 px-6 md:px-16">
+        {locations.map((item, idx) => (
           <motion.div
             key={idx}
-            className="flex flex-col items-center  md:items-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="bg-white rounded-xl shadow-sm p-6 text-center md:text-left"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: idx * 0.2 }}
           >
-            <div className="bg-orange-400 p-4 rounded-2xl mb-2">
-              <FaHouse  className="text-3xl text-white" />
+            <div className="bg-orange-400 p-3 rounded-full shadow text-white inline-block mb-4">
+              <FaHouse className="text-2xl" />
             </div>
-            <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-            <p className="text-sm whitespace-pre-line">{item.address}</p>
+            <h3 className="text-lg font-semibold tracking-wide mb-2">{item.title}</h3>
+            <p className="text-sm text-gray-600 whitespace-pre-line">{item.address}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-lime-500/20 my-2"></div>
+      <div className="border-t border-gray-200 my-4"></div>
 
-      {/* Middle Section */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 px-4 md:px-16 py-10 text-sm">
-        {/* Logo and Description */}
+      {/* Footer Main */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 px-6 md:px-16 py-12 text-sm">
+        {/* About */}
         <motion.div
           className="md:col-span-2"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <img src={logo} alt="Jagdev Engineering Works" className="w-10 mb-4" />
-          <p className="text-black/90">
-            At Jagdev Engineering Works, we specialize in high-quality roofing solutions tailored to meet the needs of residential, commercial, and industrial projects.
+          <img src={logo} alt="Jagdev Engineering Works" className="w-12 mb-4" />
+          <p className="text-gray-700 text-md">
+            We specialize in high-quality roofing solutions for residential, commercial, and industrial needs.
           </p>
-          <div className="flex space-x-4 mt-10 text-orange-400">
-            <FaFacebookF />
-            <FaLinkedinIn />
-            <FaInstagram />
+          <div className="flex space-x-4 mt-6 text-orange-400">
+            {socialIcons.map(({ Icon, url }, i) => (
+              <a
+                key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:text-orange-400 transition"
+                aria-label={`Link to ${url}`}
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </motion.div>
 
@@ -67,12 +100,16 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h4 className="font-semibold text-lg mb-2">Quick Links</h4>
-          <ul className="space-y-1 text-black/80">
-            <li>• Home</li>
-            <li>• About Us</li>
-            <li>• Services</li>
-            <li>• Contact Us</li>
+          <h4 className="text-md font-medium mb-3">Quick Links</h4>
+          <ul className="space-y-2 text-gray-600">
+            {quickLinks.map(({ name, url }, i) => (
+              <li key={i} className="hover:text-orange-400 transition">
+                •{" "}
+                <a href={url} className="cursor-pointer" >
+                  {name}
+                </a>
+              </li>
+            ))}
           </ul>
         </motion.div>
 
@@ -82,34 +119,39 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h4 className="font-semibold text-lg mb-2">Policies</h4>
-          <ul className="space-y-1 text-black/80">
-            <li>• Privacy Policy</li>
-            <li>• Term & Conditions</li>
+          <h4 className="text-md font-medium mb-3">Policies</h4>
+          <ul className="space-y-2 text-gray-600">
+            {policies.map(({ name, url }, i) => (
+              <li key={i} className="hover:text-orange-400 cursor-pointer">
+                • <a href={url}>{name}</a>
+              </li>
+            ))}
           </ul>
         </motion.div>
 
-        {/* Google Map */}
+        {/* Map */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h4 className="font-semibold text-lg mb-2">Contact Us</h4>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.4240566523256!2d80.94615977521048!3d26.86187467667202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2a49e2d4719%3A0x7bb0435cb469dcec!2sLucknow!5e0!3m2!1sen!2sin!4v1682056984434!5m2!1sen!2sin"
-            className="w-full h-40 rounded-md"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map"
-          ></iframe>
+          <h4 className="text-md font-medium mb-3">Contact Us</h4>
+          <div className="rounded-lg overflow-hidden shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.4240566523256!2d80.94615977521048!3d26.86187467667202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2a49e2d4719%3A0x7bb0435cb469dcec!2sLucknow!5e0!3m2!1sen!2sin!4v1682056984434!5m2!1sen!2sin"
+              className="w-full h-40 md:h-48"
+              loading="lazy"
+              title="Google Map - Lucknow"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </motion.div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-lime-400/20 mt-4 py-6 text-center text-sm text-black/70">
-        Copyright © 2025 Difmo Pvt. Ltd. All rights reserved.
+      <div className="bg-orange-400 text-center py-5 text-sm text-white tracking-wide">
+        © 2025 Difmo Pvt. Ltd. All rights reserved.
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ const QualityFeatures = () => {
             At any case we never compromise in our quality part of our products and follow strict total quality checks at our testing units. These steps help us to make sure that our products have high durability and fine finishing.
           </p>
 
-          <ul className="space-y-4 text-green-900 font-semibold">
+          <ul className="space-y-4 text-black-900 font-semibold">
             <li className="flex items-start gap-2">
               <span className="text-orange-500">✅</span> Attractive and functional design with choice of panel and trim colors.
             </li>

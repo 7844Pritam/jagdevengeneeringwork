@@ -40,13 +40,13 @@ const CompanyProfile = () => {
 
         {/* Text Section */}
         <div>
-          <h4 className="text-orange-600 font-semibold text-sm mb-2 uppercase">
-            About Us
+          <h4 className="text-orange-400 font-semibold text-sm mb-2 uppercase">
+            
           </h4>
-          <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black-900 mb-6 text-center">
             Company Profile
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4 text-justify">
             JEW reckoned as one of the noted manufacturers and suppliers in the
             industry. Our comprehensive range includes Pre-Engineered Building
             System, Primary Framing System, Secondary Framing System, JEW Hi-Rib
@@ -56,7 +56,7 @@ const CompanyProfile = () => {
             which are purchased from trusted and reliable vendors present in the
             market.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed text-justify">
             Our company has enhanced extensively under the supervision of our well
             qualified and skilled team members, their hard work and constant efforts
             have taken the organization to new heights of success. We strongly

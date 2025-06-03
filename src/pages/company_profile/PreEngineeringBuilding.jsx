@@ -3,7 +3,7 @@ import React from "react";
 
 const PreEngineeringBuilding = () => {
   return (
-    <section className="bg-[#f3fbea] py-12 px-6 md:px-20">
+    <section className="bg-text-white-400 py-12 px-6 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Image Section */}
         <div className="w-full md:w-1/2">
@@ -16,7 +16,7 @@ const PreEngineeringBuilding = () => {
 
         {/* Text Section */}
         <div className="w-full md:w-1/2 text-gray-700">
-          <h2 className="text-2xl font-bold text-green-900 mb-4">
+          <h2 className="text-2xl font-bold text-orange-400 mb-4">
             PREE ENGINEERING BUILDING
           </h2>
           <p className="mb-4 leading-relaxed text-lg">
