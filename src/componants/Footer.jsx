@@ -76,7 +76,8 @@ export default function Footer() {
         >
           <img src={logo} alt="Jagdev Engineering Works" className="w-12 mb-4" />
           <p className="text-gray-700 text-md">
-            We specialize in high-quality roofing solutions for residential, commercial, and industrial needs.
+           We specialize in delivering high-quality Pre-Engineered Building (PEB) structures and premium GI Roofing solutions for residential, commercial, and industrial applications. With a commitment to durability, precision engineering, and aesthetic excellence,
+            we offer a complete range of top-grade GI sheets, including color-coated, galvanized, and customized profiles to suit every architectural need.
           </p>
           <div className="flex space-x-4 mt-6 text-orange-400">
             {socialIcons.map(({ Icon, url }, i) => (
