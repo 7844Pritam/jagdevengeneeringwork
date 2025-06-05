@@ -25,7 +25,7 @@ const RoofingFeatures = () => {
   return (
     <div className="bg-[#f5f6f1] py-16 px-4 md:px-8">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-400 mb-12">
-        Providing PEB & GI Sheet Solution
+        WHY JEW
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (

@@ -26,7 +26,6 @@ const LandingPage = () => {
       <BenefitsSection/>
       <ServicesSection/>
       <WorkProcess/>
-      <IndustriesWeServe/>
       <OurProjects/>
       <WhyChooseUs/>
       <StatsSection/>

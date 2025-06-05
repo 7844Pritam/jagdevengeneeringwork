@@ -1,49 +1,37 @@
 import React from "react";
+import img from '../../assets/collageimg.jpg';
+import img2 from '../../assets/collagesmall.avif';
 
 const CompanyProfile = () => {
   return (
-    <div className="bg-green-50 py-12 px-6 md:px-20">
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* Image Grid */}
-        <div className="grid grid-cols-2 gap-4">
+    <div className="bg-white-50 flex justify-center ">
+      <div className="container  py-12 ">
+
+      <div className="flex flex-col md:flex-row gap-16   items-center justify-center">
+        <div className="w-full relative flex justify-center md:w-1/2">
           <img
-            src="/images/ba-line.jpg"
+      
+            src={img}
             alt="BA Production Line"
-            className="rounded-lg shadow"
+            className="rounded-lg w-[400px]  shadow object-cover"
           />
+          <div className="absolute -bottom-15 -right-0">
+
           <img
-            src="/images/2b-line.jpg"
-            alt="2B Production Line"
-            className="rounded-lg shadow"
+      
+            src={img2}
+            alt="BA Production Line"
+            className="rounded-lg w-[200px]  shadow object-cover"
           />
-          <img
-            src="/images/sheet-cutting.jpg"
-            alt="Sheet Cutting Line"
-            className="rounded-lg shadow"
-          />
-          <img
-            src="/images/slitting-line.jpg"
-            alt="Slitting Line"
-            className="rounded-lg shadow"
-          />
-          <img
-            src="/images/stainless-warehouse.jpg"
-            alt="Stainless Steel Coil Warehouse"
-            className="rounded-lg shadow col-span-1"
-          />
-          <img
-            src="/images/coil-machine.jpg"
-            alt="Steel Coil Machine"
-            className="rounded-lg shadow col-span-1"
-          />
+          </div>
         </div>
 
         {/* Text Section */}
-        <div>
+        <div className="w-full md:w-1/2">
           <h4 className="text-orange-400 font-semibold text-sm mb-2 uppercase">
-            
+            About Us
           </h4>
-          <h2 className="text-3xl md:text-4xl font-bold text-black-900 mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 text-left md:text-left">
             Company Profile
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 text-justify">
@@ -58,7 +46,7 @@ const CompanyProfile = () => {
           </p>
           <p className="text-gray-700 leading-relaxed text-justify">
             Our company has enhanced extensively under the supervision of our well
-            qualified and skilled team members, their hard work and constant efforts
+            qualified and skilled team members. Their hard work and constant efforts
             have taken the organization to new heights of success. We strongly
             believe in providing positive client satisfaction. Our customer-centric
             approach has been appreciated among our wide client base spread all
@@ -66,6 +54,7 @@ const CompanyProfile = () => {
             demanded for its optimum quality.
           </p>
         </div>
+      </div>
       </div>
     </div>
   );

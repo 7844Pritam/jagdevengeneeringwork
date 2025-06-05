@@ -1,4 +1,5 @@
 import React from "react";
+import img from '../../assets/werehouse2.jpg'
 // import steelRoll from "../assets/steel-roll.jpg"; // Replace with your image path
 
 const PreEngineeringBuilding = () => {
@@ -8,9 +9,9 @@ const PreEngineeringBuilding = () => {
         {/* Image Section */}
         <div className="w-full md:w-1/2">
           <img
-            src={"https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
+            src={img}
             alt="Steel Roll"
-            className="rounded-xl shadow-lg"
+            className="rounded-lg w-[400px] h-130 shadow object-cover"
           />
         </div>
 

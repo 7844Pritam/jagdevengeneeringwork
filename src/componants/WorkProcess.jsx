@@ -1,22 +1,28 @@
 import React from "react";
 import { FaDraftingCompass, FaLightbulb, FaSolarPanel } from "react-icons/fa";
 import MyHeading from "./MyHeadaing";
+import { FaPerson } from "react-icons/fa6";
 
 const steps = [
   {
     id: "01",
-    title: "Project Planning",
-    icon: <FaDraftingCompass className="text-white text-4xl" />,
-  },
-  {
-    id: "02",
     title: "Research & Analysis",
     icon: <FaLightbulb className="text-white text-4xl" />,
   },
   {
+    id: "02",
+    title: "Project Planning",
+    icon: <FaDraftingCompass className="text-white text-4xl" />,
+  },
+  {
     id: "03",
-    title: "Roofing Installation",
+    title: "Mfd & Fabrication",
     icon: <FaSolarPanel className="text-white text-4xl" />,
+  },
+  {
+    id: "04",
+    title: "Delivered Project",
+    icon: <FaPerson className="text-white text-4xl" />,
   },
 ];
 
@@ -25,7 +31,7 @@ const WorkProcess = () => {
     <section className="bg-white py-20 px-4 md:px-12 lg:px-32 text-center">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <p className="text-orange-500 font-semibold text-sm mb-2 uppercase tracking-wide">
+        <p className="text-orange-400 font-semibold text-sm mb-2 uppercase tracking-wide">
           
         </p>  
     
@@ -33,7 +39,7 @@ const WorkProcess = () => {
 
 
         {/* Steps */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-16 items-start justify-items-center">
+        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-16 items-start justify-items-center">
           {steps.map((step, idx) => (
             <div key={idx} className="relative flex flex-col items-center">
               {/* Numbered Circle */}
