@@ -3,8 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage.jsx';
 import OurDirectorPage from './pages/OurDirectorPage.jsx';
 import Layout from './componants/Layout.jsx';
-import CompanyProfile from './pages/company_profile/CompanyProfile.jsx';
 import CompanyProfilePage from './pages/CompanyProfilePage.jsx';
+import CareersPage from './pages/CareerPage.jsx';
+import AdminRoutes from './routes/AdminRoutes.jsx';
+import ProtectedAdmin from './admin/components/ProtectedAdmin.jsx';
 
 function App() {
   return (
@@ -13,7 +15,17 @@ function App() {
         <Route index element={<LandingPage />} />
         <Route path="directors" element={<OurDirectorPage />} />
         <Route path="profile" element={<CompanyProfilePage />} />
+        <Route path="career" element={<CareersPage />} />
       </Route>
+
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedAdmin>
+            <AdminRoutes />
+          </ProtectedAdmin>
+        }
+      />
     </Routes>
   );
 }

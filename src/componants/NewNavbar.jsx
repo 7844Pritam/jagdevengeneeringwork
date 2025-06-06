@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import logo from '../assets/cmdlogo.svg';
+import { useNavigate } from 'react-router-dom';
 
 const NewNavbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
-
+const link = "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/jagdevimg%2FJeW.pdf?alt=media&token=33d354cf-b60d-48cb-91d8-e00613dd3ac9";
   const toggleAboutDropdown = () => {
     setIsAboutOpen(!isAboutOpen);
   };
@@ -12,6 +13,7 @@ const NewNavbar = () => {
   const handleHomeClick = () => {
     window.location.href = '/';
   };
+  const navigate = useNavigate();
 
   return (
     <header className="w-full shadow-md">
@@ -47,12 +49,12 @@ const NewNavbar = () => {
             <div>
               <p className="text-gray-500 text-sm">Send Us Mail</p>
               <p className="text-black font-semibold">jewanilyadav@gmail.com</p>
-            </div>
+            </div> 
           </div>
 
-          <button className="bg-gradient-to-r from-black to-[#f18e02] text-white px-5 py-2 rounded">
-            GET A QUOTE →
-          </button>
+          <a href={link}  className="bg-gradient-to-r from-black to-[#f18e02] text-white px-5 py-2 rounded">
+            DOWNLOAD BROCHURE →
+          </a>
         </div>
       </div>
 
@@ -83,9 +85,9 @@ const NewNavbar = () => {
 </li>
 
             <li className="cursor-pointer">Our Services <span>▼</span></li>
-            <li className="cursor-pointer">Why JWE <span>▼</span></li>
-            <li className="cursor-pointer">Our Projects</li>
+            <li className="cursor-pointer">Our Project <span>▼</span></li>
             <li className="cursor-pointer">Blog</li>
+            <li className="cursor-pointer"><a href='/career'>Career</a> </li>
             <li className="cursor-pointer">Contact</li>
           </ul>
         </div>
