@@ -1,6 +1,6 @@
 import React from "react";
 import BuildingImg from "../assets/about-2.jpg"; // Replace with your actual image path
-import StructureImg from "../assets/about-2.jpg"; // Replace with your actual image path
+import StructureImg from "../assets/Sheet Image.jpg"; // Replace with your actual image path
 import MyHeading from "./MyHeadaing";
 
 const AboutSection = () => {
@@ -29,12 +29,22 @@ const AboutSection = () => {
           <h2 className="text-3xl md:text-3xl font-bold text-[#1b3c0d] mb-6 leading-snug">
          Jagdev Engineering Works
           </h2>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            Jagdev Engineering Works is a trusted name in the roofing industry, known for delivering top-quality tin roofing solutions. With years of experience and a commitment to excellence, we provide durable and cost-effective roofing sheets for residential, commercial, and industrial applications.
+          <p className="text-gray-600 mb-2 leading-relaxed">
+           Welcome to JEW Steel, your trusted partner in building the future with strength, precision, and reliability.
           </p>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            Our expertise lies in manufacturing and supplying high-strength tin roofing that withstands harsh weather conditions while maintaining aesthetic appeal. Whether you need standard roofing sheets or customized designs, our solutions are tailored to meet your unique requirements. At Jagdev Engineering Works, customer satisfaction and quality craftsmanship are at the core of everything we do.
+          <p className="text-gray-600 mb-2 leading-relaxed">
+            We specialize in the design, fabrication, and installation of Pre-Engineered Buildings (PEBs) for a wide range of applications, including multi-story buildings, warehouses, industrial plants, factories, and more. Our structures are engineered for durability, cost-efficiency, and fast project turnaround, meeting the diverse needs of modern infrastructure development.
           </p>
+          <p className="text-gray-600 mb-2 leading-relaxed">
+            In addition to our construction expertise, we also manufacture high-quality Galvanized Iron (GI) roofing sheets, sourcing premium materials from some of the most reputable brands in the industry. Whether you’re building from the ground up or enhancing an existing structure, our roofing solutions offer long-lasting protection, energy efficiency, and aesthetic appeal.
+          </p>
+          <p className="text-gray-600 mb-2 leading-relaxed font-bold">
+            Let’s build something remarkable together.
+
+
+          </p>
+
+
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-8">
             <div className="flex items-center gap-2">
@@ -55,9 +65,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <button className="bg-[#f18e02] hover:bg-[#d57c01] text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300">
-            More About
-          </button>
+          
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import od from "../assets/Ourdirector.jpeg";
+import { Eye, Target } from 'lucide-react'; // Lucide Icons
+import od from "../assets/Ourdirector.jpeg"; // Director Image
 
 // Animation variants
 const fadeIn = {
@@ -26,7 +27,7 @@ const OurDirectorPage = () => {
         variants={staggerContainer}
         className="relative bg-white py-20 px-6 sm:px-10 lg:px-20 shadow-sm"
       >
-        <div className="max-w-7xl mx-auto flex justify-around lg:flex-row  gap-16">
+        <div className="max-w-7xl mx-auto flex justify-around lg:flex-row gap-16">
           {/* Director Text */}
           <motion.div variants={fadeIn} className="lg:w-1/2 space-y-6 text-left">
             <h1 className="text-4xl sm:text-5xl font-bold leading-snug tracking-tight">
@@ -78,7 +79,7 @@ const OurDirectorPage = () => {
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
-        className="py-20 px-6 sm:px-10 lg:px-20 bg-white"
+        className="py-20 px-6 sm:px-10 lg:px-20 bg-gradient-to-b from-[#2E2E2E] to-[#1C1C1C]"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Vision */}
@@ -86,7 +87,10 @@ const OurDirectorPage = () => {
             variants={fadeIn}
             className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300"
           >
-            <h3 className="text-2xl font-bold text-orange-400 mb-4">Our Vision</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Eye className="text-orange-400 w-6 h-6" />
+              <h3 className="text-2xl font-bold text-orange-400">Our Vision</h3>
+            </div>
             <p className="text-gray-700 text-justify">
               To be a trusted leader in the steel building industry. We aim to build smarter and with greater value — helping businesses grow with modern, safe, and affordable construction solutions.
             </p>
@@ -97,7 +101,10 @@ const OurDirectorPage = () => {
             variants={fadeIn}
             className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300"
           >
-            <h3 className="text-2xl font-bold text-orange-400 mb-4">Our Mission</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Target className="text-orange-400 w-6 h-6" />
+              <h3 className="text-2xl font-bold text-orange-400">Our Mission</h3>
+            </div>
             <p className="text-gray-700 text-justify">
               We are committed to delivering durable, cost-effective, and innovative pre-engineered buildings and GI sheets. Our mission is rooted in quality craftsmanship, timely execution, and exceptional customer service.
             </p>

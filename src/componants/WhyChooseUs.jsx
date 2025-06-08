@@ -10,22 +10,22 @@ import MyHeading from "./MyHeadaing";
 
 const features = [
   {
-    icon: <Home className="text-orange-400 w-10 h-10" />,
+    icon: <Home className="text-orange-400 group-hover:text-orange-300 transition-all duration-300 w-10 h-10" />,
     title: "Efficiency",
     desc: "We focus on eco-friendly materials and practices to enhance sustainability without compromising quality.",
   },
   {
-    icon: <BadgeCheck className="text-orange-400 w-10 h-10" />,
+    icon: <BadgeCheck className="text-orange-400 w-10 h-10 group-hover:text-orange-300 transition-all duration-300 " />,
     title: "Trust & Warranty",
     desc: "Your satisfaction is our priority. We provide personalized solutions tailored to your needs.",
   },
   {
-    icon: <ThumbsUp className="text-orange-400 w-10 h-10" />,
+    icon: <ThumbsUp className="text-orange-400 w-10 h-10 group-hover:text-orange-300 transition-all duration-300 " />,
     title: "High Quality Work",
     desc: "Every aspect of the project is carefully planned and executed to ensure accuracy and perfection.",
   },
   {
-    icon: <Headphones className="text-orange-400 w-10 h-10" />,
+    icon: <Headphones className="text-orange-400 w-10 h-10 group-hover:text-orange-300 transition-all duration-300 " />,
     title: "24*7 Support",
     desc: "Jagdev Engineering Works is always just a call away to ensure your experience is smooth and hassle-free.",
   },
@@ -64,9 +64,9 @@ const WhyChooseUs = () => {
             <motion.div
               key={idx}
               variants={item}
-              className="bg-white p-6 rounded-3xl shadow-md text-left"
+              className="bg-white p-6 rounded-3xl border border-gray-300 text-left hover:border-orange-300 group transition-all duration-500"
             >
-              <div className="mb-4">{feature.icon}</div>
+              <div className="mb-4 ">{feature.icon}</div>
               <h3 className="text-lg font-bold text-green-950 mb-2">
                 {feature.title}
               </h3>

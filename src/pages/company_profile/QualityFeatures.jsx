@@ -9,7 +9,10 @@ const QualityFeatures = () => {
       <div className="  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Text Content */}
         <div>
-          <p className="text-gray-500 text-lg mb-6">
+          <h2 className="text-2xl font-bold text-orange-400 mb-4">
+            GI SHEET SOLUTION
+          </h2>
+          <p className="text-black text-lg mb-6">
             At any case we never compromise in our quality part of our products and follow strict total quality checks at our testing units. These steps help us to make sure that our products have high durability and fine finishing.
           </p>
 
