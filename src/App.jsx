@@ -18,7 +18,7 @@ function App() {
         <Route path="directors" element={<OurDirectorPage />} />
         <Route path="profile" element={<CompanyProfilePage />} />
         <Route path="career" element={<CareersPage />} />
-                <Route path="/service/:id" element={<ServiceDetailPage />} />
+<Route path="/service/:title" element={<ServiceDetailPage />} />
                 <Route path="/contact-us" element={<ContactPage />} />
 
       </Route>

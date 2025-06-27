@@ -48,23 +48,19 @@ const ContactPage = () => {
         {/* Contact Info */}
         <div className="space-y-6">
           <h2 className="text-2xl font-semibold mb-4">Our Office</h2>
-          <p>XYZ Corporate Pvt. Ltd.</p>
-          <p>123 Business Avenue, 5th Floor</p>
-          <p>Kushinagar, Uttar Pradesh, India</p>
-          <p>Email: support@xyzcorporate.com</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>Jagdev Engneering Works Pvt. Ltd.</p>
+          <p>1/844 Vardan Khand, Sector-1</p>
+          <p>Gomti Nagar Extension, U.P 226010, India</p>
+          <p>Email: jewanilyadav@gmail.com</p>
+          <p>Phone: +91 8319950529</p>
           <p>Working Hours: Mon - Fri, 9:00 AM - 6:00 PM</p>
-          <div className="mt-4">
-            <iframe
-              title="Company Location"
-              src="https://maps.google.com/maps?q=kushinagar&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              className="w-full h-60 border rounded-md"
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
         </div>
       </div>
+          <div className="mt-16 w-full">
+            <div className="max-w-7xl mx-auto w-full rounded-lg overflow-hidden">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1780.0244678044703!2d81.00402985628789!3d26.838395807765625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3b392eefb69%3A0x42b82060e5a9eb23!2sJagdev%20Engineering%20Works%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1749225370229!5m2!1sen!2sin " className='w-full' height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
 
       {/* FAQ Section */}
       <div className="bg-white py-12 px-6">
@@ -81,7 +77,7 @@ const ContactPage = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold">Where are you located?</h3>
-              <p className="text-gray-600">Our head office is in Kushinagar, with regional offices across India.</p>
+              <p className="text-gray-600">Our head office is in Lucknow, with regional offices across Lucknow.</p>
             </div>
           </div>
         </div>
@@ -92,9 +88,9 @@ const ContactPage = () => {
         <h2 className="text-3xl font-bold text-center mb-10 text-orange-500">Meet Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
-            { name: "Amit Sharma", role: "Client Relations", phone: "+91 90000 11111", email: "amit@xyz.com" },
-            { name: "Riya Mehta", role: "Project Manager", phone: "+91 90000 22222", email: "riya@xyz.com" },
-            { name: "Sanjay Verma", role: "Tech Head", phone: "+91 90000 33333", email: "sanjay@xyz.com" }
+            { name: "Er. Pradeep Kumar", role: "Pucrhcase Head", phone: "+91 9264928486", email: "amit@xyz.com" },
+            { name: "Mrs. Pragya Kumari", role: "Sales Executive", phone: "+91 90000 22222", email: "riya@xyz.com" },
+            { name: "Mrs. Sakshi Pandey", role: "HR Department", phone: "+91 90000 33333", email: "sanjay@xyz.com" }
           ].map((person, idx) => (
             <div key={idx} className="bg-white shadow rounded-lg p-6">
               <h3 className="text-xl font-semibold">{person.name}</h3>
