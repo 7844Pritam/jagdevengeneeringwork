@@ -10,7 +10,7 @@ const NewNavbar = () => {
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (
@@ -54,6 +54,7 @@ const NewNavbar = () => {
           <div></div>
           <ul className="flex items-center gap-8 font-bold text-white text-sm">
             <li className="cursor-pointer" onClick={handleHomeClick}>Home</li>
+
             <li
               className="relative cursor-pointer"
               onMouseEnter={() => setIsAboutOpen(true)}
@@ -62,8 +63,8 @@ const NewNavbar = () => {
               About <span>▼</span>
               {isAboutOpen && (
                 <ul className="absolute z-50 top-full left-0 bg-white text-black rounded shadow-lg w-48">
-                  <li className="px-4 py-2 hover:bg-gray-100"><a href="/directors">Our Director</a></li>
-                  <li className="px-4 py-2 hover:bg-gray-100"><a href="/profile">Company Profile</a></li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/directors')}>Our Director</li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/profile')}>Company Profile</li>
                 </ul>
               )}
             </li>
@@ -76,18 +77,18 @@ const NewNavbar = () => {
               Our Services <span>▼</span>
               {isServicesOpen && (
                 <ul className="absolute z-50 top-full left-0 bg-white text-black rounded shadow-lg w-64">
-                  <li className="px-4 py-2 hover:bg-gray-100"><a href="/service/peb-multi-story">PEB Multi Story Building</a></li>
-                  <li className="px-4 py-2 hover:bg-gray-100"><a href="/service/peb-warehousing">PEB Warehousing</a></li>
-                  <li className="px-4 py-2 hover:bg-gray-100"><a href="/service/gi-sheet">GI Sheet Manufacturing</a></li>
-                  <li className="px-4 py-2 hover:bg-gray-100"><a href="/service/industrial-shed">Industrial Shed</a></li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/peb-multi-story')}>PEB Multi Story Building</li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/peb-warehousing')}>PEB Warehousing</li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/gi-sheet-manufacturing')}>GI Sheet Manufacturing</li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/industrial-shed')}>Industrial Shed</li>
                 </ul>
               )}
             </li>
 
             <li className="cursor-pointer">Our Project <span>▼</span></li>
             <li className="cursor-pointer">Blog</li>
-            <li className="cursor-pointer"><a href='/career'>Career</a></li>
-            <li className="cursor-pointer"><a href='/contact-us'>Contact</a> </li>
+            <li className="cursor-pointer" onClick={() => navigate('/career')}>Career</li>
+            <li className="cursor-pointer" onClick={() => navigate('/contact-us')}>Contact</li>
           </ul>
         </div>
       </nav>

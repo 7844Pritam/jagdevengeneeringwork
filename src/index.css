@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@theme {
+  --font-poppins: Poppins, sans-serif;
+}
 
 .shine-wrapper {
   position: relative;
