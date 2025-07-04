@@ -89,8 +89,8 @@ const ContactPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
             { name: "Er. Pradeep Kumar", role: "Pucrhcase Head", phone: "+91 9264928486", email: "amit@xyz.com" },
-            { name: "Mrs. Pragya Kumari", role: "Sales Executive", phone: "+91 90000 22222", email: "riya@xyz.com" },
-            { name: "Mrs. Sakshi Pandey", role: "HR Department", phone: "+91 90000 33333", email: "sanjay@xyz.com" }
+            { name: "Mrs. Pragya Kumari", role: "Sales Executive", phone: "+91 9455277443", email: "riya@xyz.com" },
+            { name: "Mrs. Tusha Sharma", role: "HR Department", phone: "+91 90000 33333", email: "sanjay@xyz.com" }
           ].map((person, idx) => (
             <div key={idx} className="bg-white shadow rounded-lg p-6">
               <h3 className="text-xl font-semibold">{person.name}</h3>

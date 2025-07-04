@@ -8,12 +8,12 @@ const ServiceDetailPage = () => {
     (item) => item.title.toLowerCase().replace(/\s+/g, '-') === title.toLowerCase()
   );
 
-  if (!service) return <div className="p-8 text-red-500">Service not found.</div>;
+  if (!service) return <div className="p-8 text-orange-400">Service not found.</div>;
 
   return (
     <div className="min-h-screen bg-[#f9fafb] px-6 py-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-orange-500 mb-6">{service.title}</h1>
+        <h1 className="text-4xl font-bold text-orange-400 mb-6">{service.title}</h1>
 
         {/* Sections */}
         {service.details.map((section, index) => (
@@ -26,6 +26,7 @@ const ServiceDetailPage = () => {
             ) : (
               <>
                <div className="md:w-1/2 space-y-4">
+              
           {section.description && (
             <p className="text-lg text-gray-700">{section.description}</p>
           )}
@@ -33,7 +34,7 @@ const ServiceDetailPage = () => {
             <ul className="space-y-2">
               {section.points.map((point, idx) => (
                 <li key={idx}>
-                  <span className="font-semibold text-orange-600">{point.heading}:</span>{" "}
+                  <span className="font-semibold text-orange-400">{point.heading}:</span>{" "}
                   <span className="text-gray-700">{point.description}</span>
                 </li>
               ))}
@@ -51,7 +52,7 @@ const ServiceDetailPage = () => {
         ))}
 
         {/* Features */}
-        <h2 className="text-3xl font-bold text-orange-500 mb-4">Key Features</h2>
+        <h2 className="text-3xl font-bold text-orange-400 mb-4">Key Features</h2>
         <ul className="list-disc list-inside space-y-3 text-gray-800">
           {service.features.map((feature, idx) => (
             <li key={idx}>{feature}</li>
