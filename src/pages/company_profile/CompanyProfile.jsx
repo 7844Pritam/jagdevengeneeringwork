@@ -5,10 +5,10 @@ import img2 from '../../assets/collagesmall.avif';
 const CompanyProfile = () => {
   return (
     <div className="bg-white-50 flex justify-center ">
-      <div className="container  py-12 ">
+      <div className="max-w-7xl  py-12 ">
 
       <div className="flex flex-col md:flex-row gap-16   items-center justify-center">
-        <div className="w-full relative flex justify-center md:w-1/2">
+        <div className="w-full border rounded-2xl border-gray-200 p-4 relative flex justify-center md:w-1/2">
           <img
       
             src={img}

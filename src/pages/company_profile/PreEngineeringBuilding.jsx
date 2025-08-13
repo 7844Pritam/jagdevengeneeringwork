@@ -18,7 +18,7 @@ const PreEngineeringBuilding = () => {
         {/* Text Section */}
         <div className="w-full md:w-1/2 text-gray-700">
           <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            PREE ENGINEERING BUILDING
+            PRE ENGINEERING BUILDING
           </h2>
           <p className="mb-4 leading-relaxed text-lg">
             Technological improvements over the year have contributed immensely
