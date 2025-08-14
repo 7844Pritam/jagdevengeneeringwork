@@ -12,6 +12,7 @@ import ContactPage from './pages/ContactUsPage.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import TermsAndConditions from './pages/Terms&Condition.jsx';
 import ScrollToTop from './ScrollToTop.jsx';
+import OurProjectsPage from './pages/OurProjects.jsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsAndConditions />} />
+          <Route path="/our-project" element={<OurProjectsPage />} />
         </Route>
 
         <Route

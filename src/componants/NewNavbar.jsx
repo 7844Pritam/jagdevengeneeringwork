@@ -8,7 +8,7 @@ const NewNavbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const link =
-    "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/jagdevimg%2FJeW.pdf?alt=media&token=33d354cf-b60d-48cb-91d8-e00613dd3ac9";
+    "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/jagdevimg%2FBrochure%20JEW.pdf?alt=media&token=d88745ae-7cbf-4fe7-b7b4-62e75369013c";
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
@@ -104,7 +104,7 @@ const NewNavbar = () => {
             )}
           </li>
 
-          <li className="cursor-pointer">Our Project <span>▼</span></li>
+          <li onClick={() => navigate('/our-project')} className="cursor-pointer">Our Project</li>
           <li className="cursor-pointer">Blog</li>
           <li className="cursor-pointer" onClick={() => navigate('/career')}>Career</li>
           <li className="cursor-pointer" onClick={() => navigate('/contact-us')}>Contact</li>
