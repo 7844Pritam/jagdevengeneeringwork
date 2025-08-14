@@ -27,7 +27,7 @@ const NewNavbar = () => {
         >
           <img src={logo} width={50} height={50} alt="JEW Pvt. Ltd. Logo" />
           <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-900 flex items-center">
-            <span>JEW Pvt. Ltd.</span>
+            <span>JEW Steel</span>
             <sup className="text-xs align-super ml-1">®</sup>
           </div>
         </div>

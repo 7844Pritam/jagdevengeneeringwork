@@ -12,13 +12,10 @@ const OurProjectsPage = () => {
       <section className="relative flex flex-col md:flex-row items-center bg-gray-100">
         <div className="flex-1 flex justify-center items-center p-10 max-w-[1200px] mx-auto">
           <div className="w-64 h-64 bg-orange-400 rounded-full flex flex-col items-center justify-center text-white text-center p-6">
-            <h2 className="text-lg font-semibold">Our Projects</h2>
+            <h2 className="text-lg font-bold">Our Projects</h2>
             <p className="text-sm mt-2">
-              A collection of our engineering, procurement, and construction works.
+              A collection of our engineering, and construction team which make safe and secure works envirement.
             </p>
-            <button className="mt-4 bg-white text-orange-400 px-4 py-1 rounded">
-              READ MORE
-            </button>
           </div>
         </div>
         <div className="flex-1">
@@ -34,16 +31,16 @@ const OurProjectsPage = () => {
       <section className="flex max-w-[1200px] mx-auto flex-col md:flex-row items-center justify-center gap-10 p-10">
         <div className="flex-1">
           <h3 className="text-xl font-bold text-orange-400">
-            For more than 100 years, Company has provided engineering, procurement and construction services
+            For more than 10 years, Company has provided engineering, manufacturing and construction services...
           </h3>
           <p className="mt-4 text-gray-700">
-            Across multiple projects and sectors, we deliver efficient, innovative, and safe solutions...
+            Across multiple projects and sectors, we take pride in delivering solutions that are efficient, innovative, and safe. From industrial structures to custom-engineered facilities, our work reflects a commitment to quality, performance, and reliability. Every project is driven by a passion for innovation, executed with precision, and guided by the highest safety standards. Whether in manufacturing, infrastructure, or specialized engineering, we ensure each solution not only meets but exceeds client expectations—turning visions into lasting realities.
           </p>
-          <button className="mt-4 bg-orange-400 text-white px-4 py-2 rounded">
-            READ MORE
-          </button>
+         <p className="mt-4 text-gray-700">
+            Each project is fueled by our drive for innovation, carried out with meticulous precision, and anchored in the strictest safety protocols. Whether it’s manufacturing, infrastructure development, or specialized construction, we strive to not just fulfill requirements but to surpass them—transforming ideas into enduring achievements.
+          </p>
         </div>
-        <div className="flex-shrink-0 w-10 h-10 bg-orange-400 rounded-full"></div>
+        
       </section>
 
       {/* Projects */}
@@ -90,34 +87,6 @@ const OurProjectsPage = () => {
           ))}
         </div>
       </section>
-
-      {/* Contact Info Bar */}
-      <div className="bg-gray-100 ">
-
-      <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 text-center max-w-[1200px] mx-auto">
-        <div>
-          <MapPinIcon className="w-6 h-6 mx-auto text-orange-400" />
-          <p className="mt-2 font-semibold">OUR MAIN OFFICE</p>
-          <p className="text-sm text-gray-600">123 Street, City, Country</p>
-        </div>
-        <div>
-          <PhoneIcon className="w-6 h-6 mx-auto text-orange-400" />
-          <p className="mt-2 font-semibold">PHONE NUMBER</p>
-          <p className="text-sm text-gray-600">+123 456 789</p>
-        </div>
-        <div>
-          <PrinterIcon className="w-6 h-6 mx-auto text-orange-400" />
-          <p className="mt-2 font-semibold">FAX</p>
-          <p className="text-sm text-gray-600">+123 456 780</p>
-        </div>
-        <div>
-          <EnvelopeIcon className="w-6 h-6 mx-auto text-orange-400" />
-          <p className="mt-2 font-semibold">EMAIL</p>
-          <p className="text-sm text-gray-600">info@company.com</p>
-        </div>
-      </section>
-      </div>
-
       {/* Contact Form */}
       <section className="p-10 max-w-[1000px] mx-auto">
         <h3 className="text-xl font-bold mb-4">Get in touch</h3>
