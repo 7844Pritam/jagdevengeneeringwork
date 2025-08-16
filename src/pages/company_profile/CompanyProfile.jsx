@@ -1,9 +1,31 @@
 import React from "react";
 import img from '../../assets/collageimg.jpg';
 import img2 from '../../assets/collagesmall.avif';
+import { Helmet } from "react-helmet";
 
 const CompanyProfile = () => {
   return (
+    <>
+      <Helmet>
+        <title>About JEW Steel Pvt. Ltd. | Company Profile & PEB Expertise</title>
+        <meta
+          name="description"
+          content="Learn about JEW Steel Pvt. Ltd., a trusted manufacturer of Pre-Engineered Buildings, Roofing Sheets, GI Sheets, and steel structures. Our company profile highlights our expertise, quality, and customer satisfaction."
+        />
+        <meta
+          name="keywords"
+          content="JEW Steel, About JEW Steel, Company Profile, PEB Manufacturer India, Roofing Sheet Supplier, GI Sheet, Industrial Steel Structures"
+        />
+        <meta property="og:title" content="About JEW Steel Pvt. Ltd. | Company Profile" />
+        <meta
+          property="og:description"
+          content="JEW Steel Pvt. Ltd. specializes in Pre-Engineered Buildings, Roofing Sheets, and industrial steel solutions with a customer-first approach."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.jewsteel.com/about" />
+        <meta property="og:image" content="https://www.jewsteel.com/your-about-image.jpg" />
+      </Helmet>
+
     <div className="bg-white-50 flex justify-center ">
       <div className="max-w-7xl  py-12 ">
 
@@ -57,6 +79,7 @@ const CompanyProfile = () => {
       </div>
       </div>
     </div>
+    </>
   );
 };
 
