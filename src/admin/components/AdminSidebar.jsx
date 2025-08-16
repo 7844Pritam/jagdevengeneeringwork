@@ -36,7 +36,7 @@ export function AdminSidebar() {
   return (
     <div className="flex h-full w-64 flex-col bg-background border-r">
       <div className="flex h-16 items-center px-6 border-b">
-        <h1 className="text-xl font-semibold">Jagdev Engineering Works</h1>
+        <h1 className="text-xl font-semibold">JEW Steel Pvt. Ltd.</h1>
       </div>
       <nav className="flex-1 space-y-1 p-4">
         {initialNavigation.map((item) => (

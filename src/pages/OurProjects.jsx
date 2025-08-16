@@ -1,62 +1,93 @@
 import React from "react";
-import { PhoneIcon, EnvelopeIcon, MapPinIcon, PrinterIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
+// --- PROJECT DATA ---
+const projects = [
+  {
+    title: "Construction and Commissioning",
+    location: "Mumbai, India",
+    area: "45,000 sq.ft",
+    description: "We offer complete solutions for large-scale construction projects...",
+    image: "https://via.placeholder.com/400x300",
+  },
+  {
+    title: "Operations and Maintenance",
+    location: "Delhi, India",
+    area: "30,000 sq.ft",
+    description: "Ensuring your facility runs smoothly with our expert O&M services...",
+    image: "https://via.placeholder.com/400x300",
+  },
+  {
+    title: "Group Domino Sugar",
+    location: "Pune, India",
+    area: "50,000 sq.ft",
+    description: "Helping to modernize one of the world's largest sugar facilities...",
+    image: "https://via.placeholder.com/400x300",
+  },
+];
+
+// --- ANIMATION VARIANTS ---
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2 },
+  }),
+};
+
 const OurProjectsPage = () => {
   return (
-    <div className="font-sans ">
-    
-
+    <div className="font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col md:flex-row items-center bg-gray-100">
-        <div className="flex-1 flex justify-center items-center p-10 max-w-[1200px] mx-auto">
-          <div className="w-64 h-64 bg-orange-400 rounded-full flex flex-col items-center justify-center text-white text-center p-6">
-            <h2 className="text-lg font-bold">Our Projects</h2>
-            <p className="text-sm mt-2">
-              A collection of our engineering, and construction team which make safe and secure works envirement.
-            </p>
-          </div>
-        </div>
-        <div className="flex-1">
-          <img
-            src="https://via.placeholder.com/600x400"
-            alt="Business person"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </section>
+   {/* Hero Section */}
+<section
+  className="w-full flex items-center justify-center h-[300px] md:h-[300px] lg:h-[300px] bg-cover bg-center relative"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://www.freepik.com/free-photo/industrial-park-factory-building-warehouse_1296987.htm#fromView=keyword&page=1&position=21&uuid=2fc6727c-3cae-423c-aeaa-43c01735a93c&query=Peb')`
+  }}
+>
+  <div className="text-center text-white px-4">
+    <h1 className="text-3xl md:text-5xl font-bold">Our Projects</h1>
+    <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+      Delivering excellence in engineering, manufacturing, and construction for over a decade.
+    </p>
+  </div>
+</section>
 
-      {/* Intro */}
+
+      {/* Intro Section */}
       <section className="flex max-w-[1200px] mx-auto flex-col md:flex-row items-center justify-center gap-10 p-10">
         <div className="flex-1">
           <h3 className="text-xl font-bold text-orange-400">
             For more than 10 years, Company has provided engineering, manufacturing and construction services...
           </h3>
           <p className="mt-4 text-gray-700">
-            Across multiple projects and sectors, we take pride in delivering solutions that are efficient, innovative, and safe. From industrial structures to custom-engineered facilities, our work reflects a commitment to quality, performance, and reliability. Every project is driven by a passion for innovation, executed with precision, and guided by the highest safety standards. Whether in manufacturing, infrastructure, or specialized engineering, we ensure each solution not only meets but exceeds client expectations—turning visions into lasting realities.
+            Across multiple projects and sectors, we take pride in delivering solutions that are efficient, innovative, and safe. From industrial structures to custom-engineered facilities, our work reflects a commitment to quality, performance, and reliability.
           </p>
-         <p className="mt-4 text-gray-700">
-            Each project is fueled by our drive for innovation, carried out with meticulous precision, and anchored in the strictest safety protocols. Whether it’s manufacturing, infrastructure development, or specialized construction, we strive to not just fulfill requirements but to surpass them—transforming ideas into enduring achievements.
+          <p className="mt-4 text-gray-700">
+            Each project is fueled by our drive for innovation, carried out with meticulous precision, and anchored in the strictest safety protocols.
           </p>
         </div>
-        
       </section>
 
-      {/* Projects */}
+      {/* Projects Section */}
       <section className="bg-gray-800 text-white p-10">
         <h2 className="text-center text-2xl font-bold mb-10">
           Engineering, Procurement and Construction Projects Around the World
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
           {projects.map((project, i) => (
-  <motion.div
+            <motion.div
               key={i}
               custom={i}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-            //   variants={cardVariants}
+              variants={cardVariants}
               className="bg-white text-black rounded-xl overflow-hidden shadow-lg"
             >
               <img
@@ -68,25 +99,19 @@ const OurProjectsPage = () => {
                 <h3 className="text-xl font-bold mt-1 mb-2">{project.title}</h3>
                 <div className="flex items-center text-gray-700 text-sm mb-2">
                   <MapPin className="w-4 h-4 mr-2 text-orange-400" />
-                  <span>{project.title}</span>
+                  <span>{project.location}</span>
                 </div>
-                <p className="text-gray-700 text-sm mb-6">Area: {project.title}</p>
+                <p className="text-gray-700 text-sm mb-4">Area: {project.area}</p>
+                <p className="text-gray-600 text-sm mb-6">{project.description}</p>
                 <button className="bg-[#2E2E2E] transition-all duration-300 text-white py-2 px-4 rounded hover:bg-orange-400">
                   Read More
                 </button>
               </div>
             </motion.div>
-
-            // <div key={i} className="bg-white text-gray-900 rounded-lg overflow-hidden shadow">
-            //   <img src={p.image} alt={p.title} className="w-full h-40 object-cover" />
-            //   <div className="p-4">
-            //     <h3 className="font-semibold">{p.title}</h3>
-            //     <p className="text-sm mt-2">{p.description}</p>
-            //   </div>
-            // </div>
           ))}
         </div>
       </section>
+
       {/* Contact Form */}
       <section className="p-10 max-w-[1000px] mx-auto">
         <h3 className="text-xl font-bold mb-4">Get in touch</h3>
@@ -101,59 +126,9 @@ const OurProjectsPage = () => {
             SUBMIT
           </button>
         </form>
-      
       </section>
     </div>
   );
 };
 
 export default OurProjectsPage;
-
-// --- DATA ---
- const projects = [
-  {
-    title: "Construction and Commissioning",
-    description: "We offer complete solutions for large-scale construction...",
-    image: "https://via.placeholder.com/400x300",
-  },
-  {
-    title: "Operations and Maintenance",
-    description: "Ensuring your facility runs smoothly with our expert O&M services...",
-    image: "https://via.placeholder.com/400x300",
-  },
-  {
-    title: "Group Domino Sugar",
-    description: "Helping to modernize one of the world's largest sugar facilities...",
-    image: "https://via.placeholder.com/400x300",
-  },
-//   {
-//     title: "Canadian Nuclear Laboratories",
-//     description: "Providing safe, efficient nuclear solutions...",
-//     image: "https://via.placeholder.com/400x300",
-//   },
-//   {
-//     title: "Novo Nordisk API Manufacturing Facility",
-//     description: "Delivering pharmaceutical-grade manufacturing solutions...",
-//     image: "https://via.placeholder.com/400x300",
-//   },
-//   {
-//     title: "Decontamination and Decommissioning",
-//     description: "Safely dismantling outdated facilities...",
-//     image: "https://via.placeholder.com/400x300",
-//   },
-//   {
-//     title: "Expansion of Chemical Production Plant",
-//     description: "Upgrading facilities for increased production capacity...",
-//     image: "https://via.placeholder.com/400x300",
-//   },
-//   {
-//     title: "Biotechnology Manufacturing Facility",
-//     description: "Advanced bio-manufacturing capabilities...",
-//     image: "https://via.placeholder.com/400x300",
-//   },
-//   {
-//     title: "Fractionation Biotech Facility",
-//     description: "Specialized biotech production lines...",
-//     image: "https://via.placeholder.com/400x300",
-//   },
-];
