@@ -22,7 +22,7 @@ const services = [
     slug: "/service/peb-warehousing",
   },
   {
-    title: "GI Sheet Manufacturing",
+    title: "Roofing Sheet Manufacturing",
     description:
       "We manufacture high-quality Galvanized Iron sheets for roofing, cladding, ducting, and industrial applications using advanced technology.",
      image:
@@ -30,9 +30,9 @@ const services = [
     slug: "/service/gi-sheet-manufacturing",
   },
   {
-    title: "Industrial Shed",
+    title: "EOT Crane Manufacturing", 
     description:
-      "Engineered for strength, durability, and efficiency—ideal for factories, workshops, warehouses, and various industrial setups.",
+      "EOT Cranes are heavy-duty lifting machines designed for efficient material handling in industrial environments.",
    image:
       "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/ajagdev%2FWhatsApp%20Image%202025-05-20%20at%209.45.28%20PM.jpeg?alt=media&token=c1fc909c-ad05-4565-898d-315d1a74ce6d",
     slug: "/service/industrial-shed",

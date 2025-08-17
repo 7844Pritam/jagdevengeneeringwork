@@ -33,8 +33,14 @@ const OurDirectorPage = () => {
               I started this company with a clear vision — to deliver reliable, high-quality Pre-Engineered Building (PEB) solutions that combine technical excellence with a commitment to customer satisfaction.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-gray-600">
-              At Jagdev Engineering Works, we build more than structures — we build trust and lasting relationships.
+              At JEW Steel Pvt. Ltd., our journey has always been guided by hard work, innovation, and a strong commitment to quality. From manufacturing high-grade Pre-Engineering Buildings to durable GI Sheets, our focus is on delivering solutions that add real value to our clients and partners.
             </p>
+             <p className="text-base sm:text-lg leading-relaxed text-gray-600">
+              What makes our company strong is not just the technology we use, but the people behind it. I deeply appreciate the dedication of our employees, staff, and workers whose continuous efforts have helped us achieve every milestone. Together, we are building not only trusted products but also a culture of reliability, safety, and progress.Our goal is to set new benchmarks in the steel and construction industry by combining modern engineering with sustainable practices. Looking ahead, we aim to expand our capabilities, strengthen our relationships, and contribute to the growth of our nation’s infrastructure.
+            </p>
+             <p className="text-base sm:text-lg leading-relaxed text-gray-600">
+              At Jagdev Engineering Works, we build more than structures — we build trust and lasting relationships.
+            </p>  
             <blockquote className="italic text-orange-400 font-semibold text-lg mt-4">
               "Build with purpose, lead with passion."
             </blockquote>
@@ -87,7 +93,7 @@ const OurDirectorPage = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-orange-400">Our Vision</h3>
             </div>
             <p className="text-gray-700 text-justify text-sm sm:text-base">
-              To be a trusted leader in the steel building industry. We aim to build smarter and with greater value.
+              To be recognized as a leading and trusted player in the steel and infrastructure industry, known for engineering excellence, cutting-edge solutions, and uncompromised safety standards. Our vision is to create landmark structures, long-term value, and global competitiveness by embracing modern manufacturing technologies, green practices, and customer-centric strategies, shaping a stronger and sustainable future.
             </p>
           </motion.div>
 
@@ -101,7 +107,7 @@ const OurDirectorPage = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-orange-400">Our Mission</h3>
             </div>
             <p className="text-gray-700 text-justify text-sm sm:text-base">
-              We are committed to delivering durable, cost-effective, and innovative pre-engineered buildings.
+               Deliver world-class Pre-Engineered Buildings (PEB) and Galvanized Iron (GI) Sheets with superior strength, durability, and precision. We are dedicated to ensuring structural integrity, cost efficiency, and sustainability in every project while empowering our workforce and exceeding customer expectations through innovation, advanced technology, and quality-driven practices.
             </p>
           </motion.div>
         </div>
