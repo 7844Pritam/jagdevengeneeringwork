@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import MyHeading from "./MyHeadaing";
-import img from "../assets/Project1.jpeg";
+import img1 from "../assets/Project1.jpeg";
 
 const projects = [
   {
-    title: "Steel Structure Plant",
+    title: "Steel Structure Factory",
     location: "Barabanki, UP",
     area: "16,145 sq.ft",
-    img: "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/ajagdev%2FWhatsApp%20Image%202025-05-20%20at%209.45.28%20PM.jpeg?alt=media&token=c1fc909c-ad05-4565-898d-315d1a74ce6d",
+    img: img1
   },
   {
     title: "Transport Nagar Project",

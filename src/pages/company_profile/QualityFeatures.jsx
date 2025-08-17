@@ -1,10 +1,11 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react'; // Optional for icon
 import img from '../../assets/sheet.png'
+import img12 from '../../assets/jewsheet.jpg'
 const QualityFeatures = () => {
   return (
     <section className="bg-white-50   py-16 px-6 md:px-20">
-      <div className='container'>
+      <div className='flex max-w-7xl mx-auto'>
 
       <div className="  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Text Content */}
@@ -46,9 +47,14 @@ const QualityFeatures = () => {
         </div>
 
         {/* Image */}
-        <div>
+        <div className='flex flex-col md:flex-row'>
           <img
             src={img}// Replace with actual image path
+            alt="Metal Sheet"
+            className="rounded-lg w-[400px] h-100 shadow object-cover"
+          />
+          <img
+            src={img12}// Replace with actual image path
             alt="Metal Sheet"
             className="rounded-lg w-[400px] h-100 shadow object-cover"
           />

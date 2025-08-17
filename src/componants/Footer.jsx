@@ -5,33 +5,39 @@ import { Phone, Mail } from "lucide-react";
 import React from "react";
 import logo from "../assets/cmdlogo.svg";
 
+import { Building, Factory } from "lucide-react";
+
 const locations = [
   {
     title: "Corporate Office",
-    address: "1/844 Vardan Khand Sector 1\nGomtinagar Lucknow, 226010.",
+    address: "1/844 Vardan Khand, Sector 1\nGomti Nagar Extension, Lucknow, 226010.",
+    icon: <Building className="text-white" size={20} />,
   },
   {
     title: "Plant 1",
-    address: "Khasara No.- 86 Daud Nargar, Near Kisan Path, Lucknow",
+    address: "Khasara No.- 86 Daud Nagar, Near Kisan Path, Lucknow, UP",
+    icon: <Factory className="text-white" size={20} />,
   },
   {
     title: "Plant 2",
     address: "Chorpa Kala Market, Mau U.P India.",
+    icon: <Factory className="text-white" size={20} />,
   },
 ];
 
+
 const quickLinks = [
   { name: "Home", url: "/" },
-  { name: "About Us", url: "/about" },
-  { name: "Services", url: "/services" },
-  { name: "Contact Us", url: "/contact" },
+  { name: "About Us", url: "/profile" },
+  { name: "Services", url: "/service/peb-multi-story-building" },
+  { name: "Contact Us", url: "/contact-us" },
 ];
 
 const Our_Services = [
-  { name: "PEB Multi-Story Building", url: "/" },
-  { name: "PEB Warehousing", url: "/about" },
-  { name: "GI Sheet Manufactured", url: "/services" },
-  { name: "Industrial Shed", url: "/contact" },
+  { name: "PEB Multi-Story Building", url: "/service/peb-multi-story-building" },
+  { name: "PEB Warehousing", url: "/service/peb-warehousing" },
+  { name: "GI Sheet Manufactured", url: "/service/gi-sheet-manufacturing" },
+  { name: "Industrial Shed", url: "/service/industrial-shed" },
 ];
 
 const policies = [
@@ -49,25 +55,24 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 text-gray-800 font-sans transition-all">
       {/* Locations */}
-     <div className="w-full flex justify-center">
-  <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 py-12 px-6">
-    {locations.map((item, idx) => (
-      <motion.div
-        key={idx}
-        className="bg-white rounded-xl shadow-sm p-6 text-center md:text-left"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: idx * 0.2 }}
-      >
-        <div className="bg-orange-400 p-3 rounded-full shadow text-white inline-block mb-4">
-          <FaHouse className="text-2xl" />
+      <div className="w-full flex justify-center">
+        <div className="w-full  max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 py-12 px-6">
+          {locations.map((item, idx) => (
+            <motion.div
+              key={idx}
+              className=" rounded-xl border border-orange-200 hover:bg-white  transition-all duration-300 bg-orange-50 p-6 text-center md:text-left"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+            >
+              <div className="bg-orange-400 p-3 rounded-full shadow text-white inline-block mb-4">
+                {item.icon}        </div>
+              <h3 className="text-lg font-semibold tracking-wide mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-600 whitespace-pre-line">{item.address}</p>
+            </motion.div>
+          ))}
         </div>
-        <h3 className="text-lg font-semibold tracking-wide mb-2">{item.title}</h3>
-        <p className="text-sm text-gray-600 whitespace-pre-line">{item.address}</p>
-      </motion.div>
-    ))}
-  </div>
-</div>
+      </div>
 
 
       <div className="border-t border-gray-200 my-4"></div>

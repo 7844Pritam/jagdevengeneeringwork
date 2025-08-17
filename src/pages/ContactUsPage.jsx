@@ -6,8 +6,8 @@ const ContactPage = () => {
       {/* Header */}
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-10 px-6 text-center">
-          <h1 className="text-4xl font-bold text-orange-500 mb-2">Contact Us</h1>
-          <p className="text-lg text-gray-600">We’d love to hear from you. Let’s work together to build something great.</p>
+          <h1 className="text-4xl font-bold text-orange-400 mb-2">Contact Us</h1>
+          <p className="text-lg text-gray-600"></p>
         </div>
       </div>
 
@@ -38,7 +38,7 @@ const ContactPage = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-semibold shadow"
+              className="bg-orange-400 hover:bg-orange-400 text-white px-6 py-3 rounded-md font-semibold shadow"
             >
               Submit
             </button>
@@ -65,7 +65,7 @@ const ContactPage = () => {
       {/* FAQ Section */}
       <div className="bg-white py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10 text-orange-500">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-center mb-10 text-orange-400">Frequently Asked Questions</h2>
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-semibold">How soon can I expect a reply?</h3>
@@ -85,7 +85,7 @@ const ContactPage = () => {
 
       {/* Team Section */}
       <div className="max-w-7xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-10 text-orange-500">Meet Our Team</h2>
+        <h2 className="text-3xl font-bold text-center mb-10 text-orange-400">Meet Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
             { name: "Er. Pradeep Kumar", role: "Pucrhcase Head", phone: "+91 9264928486", email: "amit@xyz.com" },
@@ -106,10 +106,9 @@ const ContactPage = () => {
       <div className="bg-gray-100 py-10 text-center">
         <h3 className="text-xl font-semibold mb-4">Connect with us</h3>
         <div className="flex justify-center space-x-6">
-          <a href="#" className="text-blue-600 hover:text-blue-800">Facebook</a>
-          <a href="#" className="text-sky-500 hover:text-sky-700">Twitter</a>
-          <a href="#" className="text-pink-600 hover:text-pink-800">Instagram</a>
-          <a href="#" className="text-blue-700 hover:text-blue-900">LinkedIn</a>
+          <a href="#" className="text-green-900 hover:text-orange-400">Facebook</a>
+          <a href="#" className="text-green-900 hover:text-orange-400">Instagram</a>
+          <a href="#" className="text-green-900 hover:text-orange-400">LinkedIn</a>
         </div>
       </div>
     </div>

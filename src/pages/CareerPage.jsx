@@ -1,6 +1,6 @@
 import React from "react";
 import { Briefcase, Users, HeartHandshake } from "lucide-react";
-import img from '../assets/career.jpg'
+import img from '../assets/career1.png'
 const CareersPage = () => {
   return (
     <div className="min-h-screen  text-gray-800 font-sans">
@@ -38,7 +38,28 @@ const CareersPage = () => {
           {/* Illustration */}
           <img
           src={img}
-            alt="Careers"
+            alt="c
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            areer1"
             className="w-full h-auto rounded-lg object-cover"
           />
 
