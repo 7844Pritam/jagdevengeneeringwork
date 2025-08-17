@@ -26,7 +26,7 @@ const NewNavbar = () => {
           onClick={handleHomeClick}
         >
           <img src={logo} width={50} height={50} alt="JEW Pvt. Ltd. Logo" />
-          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-900 flex items-center">
+          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0d5750] flex items-center">
             <span>JEW Steel</span>
             <sup className="text-xs align-super ml-1">®</sup>
           </div>
@@ -40,7 +40,7 @@ const NewNavbar = () => {
             </div>
             <div>
               <p className="text-gray-500 text-sm">Toll Free Number</p>
-              <p className="text-black font-semibold">+91-8319950259</p>
+              <p className="text-[#0d5750] font-semibold">+91-8319950259</p>
             </div>
           </div>
 
@@ -50,7 +50,7 @@ const NewNavbar = () => {
             </div>
             <div>
               <p className="text-gray-500 text-sm">Send Us Mail</p>
-              <p className="text-black font-semibold">jewanilyadav@gmail.com</p>
+              <p className="text-[#0d5750] font-semibold">jewanilyadav@gmail.com</p>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ const NewNavbar = () => {
       {/* Bottom Navbar */}
       <nav className="bg-[#f18e02]">
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex justify-center items-center gap-8 font-bold text-white text-sm py-3">
+        <ul className="hidden lg:flex justify-end  items-center gap-8 font-bold text-white text-sm py-3 px-5">
           <li className="cursor-pointer" onClick={handleHomeClick}>Home</li>
 
           <li
@@ -105,7 +105,7 @@ const NewNavbar = () => {
           </li>
 
           <li onClick={() => navigate('/our-project')} className="cursor-pointer">Our Project</li>
-          <li className="cursor-pointer">Blog</li>
+          {/* <li className="cursor-pointer">Blog</li> */}
           <li className="cursor-pointer" onClick={() => navigate('/career')}>Career</li>
           <li className="cursor-pointer" onClick={() => navigate('/contact-us')}>Contact</li>
         </ul>
@@ -138,7 +138,7 @@ const NewNavbar = () => {
             </li>
 
             <li>Our Project</li>
-            <li>Blog</li>
+            {/* <li>Blog</li> */}
             <li onClick={() => navigate('/career')}>Career</li>
             <li onClick={() => navigate('/contact-us')}>Contact</li>
 

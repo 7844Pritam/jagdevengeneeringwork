@@ -114,177 +114,199 @@ function AdminContact() {
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Contact Us Management</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Messages Management */}
-        <Card className="lg:col-span-2">
-          <CardHeader>
-            <CardTitle>Contact Messages</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col md:flex-row gap-4 mb-4">
-              <div className="relative flex-1">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-                <Input
-                  type="search"
-                  placeholder="Search messages..."
-                  className="pl-8"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-              <select
-                className="p-2 border rounded-md"
-                value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value)}
-              >
-                <option value="All">All Status</option>
-                <option value="New">New</option>
-                <option value="Replied">Replied</option>
-                <option value="Resolved">Resolved</option>
-              </select>
-            </div>
+<div className="p-6 space-y-6">
+  {/* Page Title */}
+  <h1 className="text-3xl font-bold">Contact Us Management</h1>
 
-            <div className="border rounded-md overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Message</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {filteredMessages.length > 0 ? (
-                    filteredMessages.map((message) => (
-                      <TableRow
-                        key={message.id}
-                        className="cursor-pointer hover:bg-gray-50"
-                      >
-                        <TableCell
-                          className="font-medium"
-                          onClick={() => setSelectedMessage(message)}
-                        >
-                          {message.name}
-                        </TableCell>
-                        <TableCell onClick={() => setSelectedMessage(message)}>
-                          {message.message.substring(0, 50)}...
-                        </TableCell>
-                        <TableCell onClick={() => setSelectedMessage(message)}>
-                          {message.date}
-                        </TableCell>
-                        <TableCell onClick={() => setSelectedMessage(message)}>
-                          <Badge
-                            variant={
-                              message.status === "New"
-                                ? "default"
-                                : message.status === "Replied"
-                                ? "secondary"
-                                : "outline"
-                            }
-                          >
-                            {message.status}
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="text-right">
-                          <div className="flex justify-end gap-2">
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => handleStatusChange(message.id, "Resolved")}
-                              title="Mark as Resolved"
-                            >
-                              <Check className="h-4 w-4 text-green-500" />
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => handleDeleteMessage(message.id)}
-                              title="Delete"
-                            >
-                              <Trash2 className="h-4 w-4 text-red-500" />
-                            </Button>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))
-                  ) : (
-                    <TableRow>
-                      <TableCell colSpan={5} className="text-center py-4">
-                        No messages found
-                      </TableCell>
-                    </TableRow>
-                  )}
-                </TableBody>
-              </Table>
-            </div>
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    {/* Messages Management */}
+    <Card className="lg:col-span-2 rounded-2xl shadow-sm hover:shadow-md border border-gray-200 transition">
+      <CardHeader>
+        <CardTitle className="text-lg font-semibold">Contact Messages</CardTitle>
+      </CardHeader>
 
-            {selectedMessage && (
-              <div className="mt-6 border rounded-md p-4">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="font-semibold text-lg">{selectedMessage.message}</h3>
-                    <p className="text-sm text-gray-500">
-                      From: {selectedMessage.den} ({selectedMessage.email})
-                    </p>
-                    <p className="text-sm text-gray-500">Phone: {selectedMessage.phone}</p>
-                    <p className="text-sm text-gray-500">Date: {selectedMessage.date}</p>
-                  </div>
-                  <Badge
-                    variant={
-                      selectedMessage.status === "New"
-                        ? "default"
-                        : selectedMessage.status === "Replied"
-                        ? "secondary"
-                        : "outline"
-                    }
+      <CardContent>
+        {/* Search + Filters */}
+        <div className="flex flex-col md:flex-row gap-4 mb-4">
+          <div className="relative flex-1">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+            <Input
+              type="search"
+              placeholder="Search messages..."
+              className="pl-8 rounded-md border-gray-300 focus:ring-2 focus:ring-primary"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <select
+            className="p-2 border rounded-md text-sm bg-white focus:ring-2 focus:ring-primary"
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="All">All Status</option>
+            <option value="New">New</option>
+            <option value="Replied">Replied</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+        </div>
+
+        {/* Messages Table */}
+        <div className="border rounded-md overflow-hidden">
+          <Table>
+            <TableHeader className="bg-gray-50">
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>Message</TableHead>
+                <TableHead>Date</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {filteredMessages.length > 0 ? (
+                filteredMessages.map((message) => (
+                  <TableRow
+                    key={message.id}
+                    className="cursor-pointer hover:bg-gray-50 transition"
                   >
-                    {selectedMessage.status}
-                  </Badge>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-md mb-4">
-                  <p>{selectedMessage.message}</p>
-                </div>
-                <div className="space-y-4">
-                  <textarea
-                    className="w-full p-2 border rounded-md"
-                    rows="4"
-                    placeholder="Type your reply here..."
-                    value={replyText}
-                    onChange={(e) => setReplyText(e.target.value)}
-                  />
-                  <div className="flex gap-2">
-                    <Button
-                      onClick={handleSendReply}
-                      disabled={!replyText.trim()}
+                    <TableCell
+                      className="font-medium"
+                      onClick={() => setSelectedMessage(message)}
                     >
-                      <Reply className="mr-2 h-4 w-4" />
-                      Send Reply
-                    </Button>
-                    <Button
-                      variant="outline"
-                      onClick={() => handleStatusChange(selectedMessage.id, "Resolved")}
+                      {message.name}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => setSelectedMessage(message)}
+                      className="text-gray-600"
                     >
-                      Mark as Resolved
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="text-red-500"
-                      onClick={() => setSelectedMessage(null)}
-                    >
-                      Close
-                    </Button>
-                  </div>
-                </div>
+                      {message.message.substring(0, 50)}...
+                    </TableCell>
+                    <TableCell onClick={() => setSelectedMessage(message)}>
+                      {message.date}
+                    </TableCell>
+                    <TableCell>
+                      <Badge
+                        variant={
+                          message.status === "New"
+                            ? "default"
+                            : message.status === "Replied"
+                            ? "secondary"
+                            : "outline"
+                        }
+                      >
+                        {message.status}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <div className="flex justify-end gap-2">
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() =>
+                            handleStatusChange(message.id, "Resolved")
+                          }
+                          title="Mark as Resolved"
+                        >
+                          <Check className="h-4 w-4 text-green-500" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => handleDeleteMessage(message.id)}
+                          title="Delete"
+                        >
+                          <Trash2 className="h-4 w-4 text-red-500" />
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={5} className="text-center py-6 text-gray-500">
+                    No messages found
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+
+        {/* Message Detail + Reply */}
+        {selectedMessage && (
+          <div className="mt-6 border rounded-xl shadow-sm p-4 bg-white">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="font-semibold text-lg">
+                  {selectedMessage.subject || "Message Detail"}
+                </h3>
+                <p className="text-sm text-gray-500">
+                  From: {selectedMessage.name} ({selectedMessage.email})
+                </p>
+                <p className="text-sm text-gray-500">
+                  Phone: {selectedMessage.phone}
+                </p>
+                <p className="text-sm text-gray-500">
+                  Date: {selectedMessage.date}
+                </p>
               </div>
-            )}
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+              <Badge
+                variant={
+                  selectedMessage.status === "New"
+                    ? "default"
+                    : selectedMessage.status === "Replied"
+                    ? "secondary"
+                    : "outline"
+                }
+              >
+                {selectedMessage.status}
+              </Badge>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-md mb-4">
+              <p className="text-gray-700">{selectedMessage.message}</p>
+            </div>
+
+            <div className="space-y-4">
+              <textarea
+                className="w-full p-3 border rounded-md text-sm focus:ring-2 focus:ring-primary"
+                rows="4"
+                placeholder="Type your reply here..."
+                value={replyText}
+                onChange={(e) => setReplyText(e.target.value)}
+              />
+              <div className="flex flex-wrap gap-2">
+                <Button
+                  onClick={handleSendReply}
+                  disabled={!replyText.trim()}
+                >
+                  <Reply className="mr-2 h-4 w-4" />
+                  Send Reply
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() =>
+                    handleStatusChange(selectedMessage.id, "Resolved")
+                  }
+                >
+                  Mark as Resolved
+                </Button>
+                <Button
+                  variant="outline"
+                  className="text-red-500"
+                  onClick={() => setSelectedMessage(null)}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  </div>
+</div>
+
   );
 }
 

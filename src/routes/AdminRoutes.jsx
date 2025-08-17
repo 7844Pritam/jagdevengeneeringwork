@@ -16,11 +16,7 @@ const AdminRoutes = () => {
         <Route path="blogs" element={<AdminBlog />} />
         <Route path="contact" element={<AdminContact />} />
         <Route path="carrers" element={<AdminCareers />} />
-        {/* Future routes can go here:
-        <Route path="about" element={<AboutPage />} />
-        <Route path="contact" element={<ContactUs />} />
-        <Route path="blog" element={<BlogPage />} />
-        <Route path="career" element={<CareerPage />} /> */}
+      
       </Route>
     </Routes>
   );

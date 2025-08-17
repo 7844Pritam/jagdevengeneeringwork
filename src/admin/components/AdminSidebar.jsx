@@ -16,12 +16,10 @@ import { Button } from "./Button";
 
 const initialNavigation = [
   { name: "Dashboard", href: "/admin", icon: Home },
-  { name: "Brands", href: "/admin/brands", icon: Users },
   { name: "Blogs", href: "/admin/blogs", icon: Package },
   { name: "Contacts", href: "/admin/contact", icon: Contact },
   { name: "Carrer", href: "/admin/carrers", icon: Workflow },
-  // { name: "Reports", href: "/reports", icon: FileText },
-  // { name: "Settings", href: "/settings", icon: Settings },
+
 ];
 
 export function AdminSidebar() {
@@ -34,8 +32,8 @@ export function AdminSidebar() {
   };
 
   return (
-    <div className="flex h-full w-64 flex-col bg-background border-r">
-      <div className="flex h-16 items-center px-6 border-b">
+    <div className="flex h-full w-64 flex-col bg-background border-r border-gray-200">
+      <div className="flex h-16 items-center px-6 border-b border-gray-200">
         <h1 className="text-xl font-semibold">JEW Steel Pvt. Ltd.</h1>
       </div>
       <nav className="flex-1 space-y-1 p-4">
@@ -43,7 +41,7 @@ export function AdminSidebar() {
           <Button
             key={item.name}
             variant={active === item.name ? "secondary" : "ghost"}
-            className={cn("w-full justify-start", active === item.name && "bg-secondary text-white")}
+            className={cn("w-full justify-start", active === item.name && "bg-secondary text-orange-400")}
             onClick={() => handleClick(item.name, item.href)}
           >
             <item.icon className="mr-2 h-4 w-4" />

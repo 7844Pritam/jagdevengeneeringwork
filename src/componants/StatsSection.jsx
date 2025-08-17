@@ -47,7 +47,7 @@ export default function StatsSection() {
   return (
     <div className="bg-white py-10">
       <motion.div
-        className=" mx-auto px-6 flex justify-evenly"
+        className=" mx-auto px-6 grid gap-5 grid-cols-2 md:grid-cols-4"
         variants={container}
         initial="hidden"
         whileInView="visible"

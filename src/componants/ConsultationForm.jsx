@@ -72,7 +72,7 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="bg-[#f5f3e9] min-h-screen p-32 sm:px-6 lg:px-8 flex items-center justify-center">
+    <div className="bg-[#f5f3e9] min-h-screen md:p-32 p-6 sm:px-6 lg:px-8 flex items-center justify-center">
       <motion.div
         variants={containerVariants}
         initial="hidden"
