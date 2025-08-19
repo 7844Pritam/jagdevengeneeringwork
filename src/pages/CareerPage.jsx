@@ -1,6 +1,6 @@
 import React from "react";
 import { Briefcase, Users, HeartHandshake } from "lucide-react";
-import img from '../assets/career1.png'
+import img from '../assets/c2.jpg'
 const CareersPage = () => {
   return (
     <div className="min-h-screen  text-gray-800 font-sans">
@@ -34,7 +34,7 @@ const CareersPage = () => {
 
       {/* Application Section with Image */}
       <section className=" py-16 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-9xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Illustration */}
           <img
           src={img}

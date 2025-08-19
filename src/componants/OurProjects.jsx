@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import MyHeading from "./MyHeadaing";
-import img1 from "../assets/Project1.jpeg";
+import img1 from "../assets/Project2.jpeg";
 
 const projects = [
   {

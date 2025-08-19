@@ -1,8 +1,7 @@
 import React from "react";
 import MyHeading from "./MyHeadaing";
 import { useNavigate } from "react-router-dom";
-
-
+import eutimg from '../assets/eot1.jpg'
 
 const services = [
   {
@@ -34,7 +33,7 @@ const services = [
     description:
       "EOT Cranes are heavy-duty lifting machines designed for efficient material handling in industrial environments.",
    image:
-      "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/ajagdev%2FWhatsApp%20Image%202025-05-20%20at%209.45.28%20PM.jpeg?alt=media&token=c1fc909c-ad05-4565-898d-315d1a74ce6d",
+      eutimg,
     slug: "/service/industrial-shed",
   },
 ];

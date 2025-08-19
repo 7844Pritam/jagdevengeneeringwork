@@ -107,7 +107,7 @@ const OurDirectorPage = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-orange-400">Our Mission</h3>
             </div>
             <p className="text-gray-700 text-justify text-sm sm:text-base">
-               Deliver world-class Pre-Engineered Buildings (PEB) and Galvanized Iron (GI) Sheets with superior strength, durability, and precision. We are dedicated to ensuring structural integrity, cost efficiency, and sustainability in every project while empowering our workforce and exceeding customer expectations through innovation, advanced technology, and quality-driven practices.
+              Deliver world-class Pre-Engineered Buildings (PEB) and Galvanized Iron (GI) Sheets with superior strength, durability, and precision. We are dedicated to ensuring structural integrity, cost efficiency, and sustainability in every project while empowering our workforce and exceeding customer expectations through innovation, advanced technology, and quality-driven practices.
             </p>
           </motion.div>
         </div>
