@@ -4,8 +4,8 @@ import werehouse1 from "../assets/werehouse1.jpg";
 import werehouse11 from "../assets/werehouse11.jpg";
 import rollforming1 from "../assets/rollforming1.jpg";
 import sheet1 from "../assets/sheet1.jpg";
-import shed1 from "../assets/shed1.jpg";
-import shed2 from "../assets/shed2.jpg";
+import shed1 from "../assets/crane2.jpg";
+import shed2 from "../assets/crane1.jpg";
 
 const servicesdata = [
   {
@@ -177,7 +177,7 @@ const servicesdata = [
     "details": [
       {
         "image": shed1,
-        "text": "Industrial sheds are precision-engineered, pre-fabricated steel structures designed to serve a wide range of industrial applications such as manufacturing units, logistic hubs, processing plants, and heavy equipment storage. Constructed using high-tensile steel and advanced fabrication techniques, these sheds offer superior structural integrity, load-bearing capacity, and corrosion resistance. At JEW, we specialize in delivering customized industrial sheds featuring clear-span frames, optimized bay spacing, and efficient ventilation systems to ensure operational productivity and safety. Our designs comply with relevant IS codes and are engineered to withstand high wind loads, seismic activity, and varying climatic conditions, making them ideal for long-term industrial use. Constructed using high-tensile galvanized or hot-rolled steel (IS 2062 Grade E250/E350) and fabricated under strict ISO 9001:2015-certified processes, these sheds provide excellent structural stability, corrosion resistance, and long service life."
+        "text": "An Electric Overhead Traveling (EOT) Crane is a highly efficient lifting solution widely used in warehouses, factories, and industrial plants. Designed for heavy material handling, it offers smooth operation, high load capacity, and precision in movement, ensuring safe and reliable performance for various industrial applications.This unique configuration boasts a single girder or cross beam, ingeniously flipped upside-down. The gantry beam suspends against the shed structure, while the LT end carriage dangles from it, seamlessly connected below the end carriage. Our underslung EOT crane ranges up to 12.5 tons with an impressive 25-meter span. All three meticulously crafted modular design adheres to rigorous international standards – FEM, ISO, and IS – offering precision and excellence. A circular variant in the same category further amplifies your choices.Discover unparalleled material handling precision with our EOT Cranes, revolutionizing overhead lifting across all axes. Indef offers a diverse range, including Single Girder, Double Girder, Underslung EOT Cranes, and Crane Kits, tailored to your specific needs."
       },
       {
         image: shed2,
