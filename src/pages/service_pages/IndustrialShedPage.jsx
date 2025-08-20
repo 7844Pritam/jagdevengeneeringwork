@@ -253,53 +253,6 @@ const IndustrialShedPage = () => {
           </div>
         </div>
 
-        {/* Section 2 */}
-        <div className="flex flex-col md:flex-row gap-6 mb-10">
-          <div className="md:w-1/2 flex flex-col justify-center space-y-2 text-gray-900">
-            <ul className="space-y-2">
-              <li>
-                <span className="font-semibold text-orange-400">
-                  Manufacturing:
-                </span>{" "}
-                Assembly lines, machinery housing.
-              </li>
-              <li>
-                <span className="font-semibold text-orange-400">
-                  Warehousing:
-                </span>{" "}
-                Bulk storage and distribution centers.
-              </li>
-              <li>
-                <span className="font-semibold text-orange-400">
-                  Cold Storage:
-                </span>{" "}
-                Food processing and temperature-controlled units.
-              </li>
-              <li>
-                <span className="font-semibold text-orange-400">Power:</span>{" "}
-                Generator and transformer housing.
-              </li>
-              <li>
-                <span className="font-semibold text-orange-400">
-                  Recycling:
-                </span>{" "}
-                Waste management plants.
-              </li>
-              <li>
-                <span className="font-semibold text-orange-400">
-                  Agriculture:
-                </span>{" "}
-                Grains, equipment, and cattle sheds.
-              </li>
-            </ul>
-          </div>
-          <img
-            src={shed2}
-            alt="Industrial Shed"
-            className="w-full md:w-1/2 max-h-[400px] object-cover rounded-xl shadow"
-          />
-        </div>
-
         {/* Features */}
         <h2 className="text-2xl font-bold text-orange-400 mb-4">ADVANTAGES</h2>
         <ul className="list-disc list-inside text-gray-900 space-y-2">

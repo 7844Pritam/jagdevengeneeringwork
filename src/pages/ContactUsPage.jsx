@@ -44,18 +44,7 @@ export default function ContactPage({}) {
                     Mon–Fri | 09:00–18:00
                   </p>
                 </div>
-                <div className="rounded-xl bg-white/10 p-3 sm:p-4 ring-1 ring-white/20">
-                  <h4 className="font-semibold">Location</h4>
-                  <p className="mt-1 text-xs text-white/80 sm:text-sm">
-                    Jagdev Engineering Works Pvt. Ltd.
-                    <br />
-                    1/844 Vardan Khand, Sector-1
-                    <br />
-                    Gomti Nagar Extension, U.P 226010, India
-                    <br />
-                    Mon–Fri | 09:00–18:00
-                  </p>
-                </div>
+                
               
                 {/* ...other info blocks */}
               </div>

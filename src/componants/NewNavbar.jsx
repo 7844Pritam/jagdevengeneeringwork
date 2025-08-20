@@ -99,7 +99,7 @@ const NewNavbar = () => {
                 <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/peb-multi-story-building')}>PEB Multi Story Building</li>
                 <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/peb-warehousing')}>PEB Warehousing</li>
                 <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/gi-sheet-manufacturing')}>GI Sheet Manufacturing</li>
-                <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/industrial-shed')}>Industrial Shed</li>
+                <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/industrial-shed')}>EOT Crane Manufacturing</li>
               </ul>
             )}
           </li>
@@ -132,7 +132,7 @@ const NewNavbar = () => {
                   <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/peb-multi-story-building')}>PEB Multi Story Building</li>
                   <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/peb-warehousing')}>PEB Warehousing</li>
                   <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/gi-sheet-manufacturing')}>GI Sheet Manufacturing</li>
-                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/industrial-shed')}>Industrial Shed</li>
+                  <li className="px-4 py-2 hover:bg-gray-100" onClick={() => navigate('/service/industrial-shed')}>EOT Crane Manufacturing</li>
                 </ul>
               )}
             </li>

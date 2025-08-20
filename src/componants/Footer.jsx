@@ -37,7 +37,7 @@ const Our_Services = [
   { name: "PEB Multi-Story Building", url: "/service/peb-multi-story-building" },
   { name: "PEB Warehousing", url: "/service/peb-warehousing" },
   { name: "GI Sheet Manufactured", url: "/service/gi-sheet-manufacturing" },
-  { name: "Industrial Shed", url: "/service/industrial-shed" },
+  { name: "EOT Crane Manufacturing", url: "/service/industrial-shed" },
 ];
 
 const policies = [
