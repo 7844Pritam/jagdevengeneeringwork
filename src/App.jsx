@@ -15,6 +15,10 @@ import ScrollToTop from "./ScrollToTop.jsx";
 import OurProjectsPage from "./pages/OurProjects.jsx";
 import { FaWhatsapp } from "react-icons/fa";
 import { Phone } from "lucide-react";
+import PEBMultiStoryPage from "./pages/service_pages/PEBMultiStoryPage.jsx";
+import PEBWarehousingPage from "./pages/service_pages/PEBWarehousingPage.jsx";
+import GISheetPage from "./pages/service_pages/GISheetPage.jsx";
+import IndustrialShedPage from "./pages/service_pages/IndustrialShedPage.jsx";
 
 function App() {
   const location = useLocation();
@@ -40,11 +44,18 @@ function App() {
           <Route path="directors" element={<OurDirectorPage />} />
           <Route path="profile" element={<CompanyProfilePage />} />
           <Route path="career" element={<CareersPage />} />
-          <Route path="/service/:title" element={<ServiceDetailPage />} />
+          {/* <Route path="/service/:title" element={<ServiceDetailPage />} /> */}
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsAndConditions />} />
           <Route path="/our-project" element={<OurProjectsPage />} />
+
+
+          {/* // services */}
+          <Route path="/service/peb-multi-story-building" element={<PEBMultiStoryPage />} />
+          <Route path="/service/peb-warehousing" element={<PEBWarehousingPage />} />
+          <Route path="/service/gi-sheet-manufacturing" element={<GISheetPage />} />
+          <Route path="/service/industrial-shed" element={<IndustrialShedPage />} />
         </Route>
 
         <Route

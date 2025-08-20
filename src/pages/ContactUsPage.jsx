@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const chips = ["Booking", "General", "Wedding", "Corporate", "Others"];
+const chips = ["Booking", "General", "Quotatuion", "Corporate", "Others"];
 import heroUrl from "../assets/about-2.jpg";
 
 export default function ContactPage({}) {
@@ -102,7 +102,7 @@ export default function ContactPage({}) {
                       className={
                         "rounded-full border px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm transition " +
                         (activeChip === c
-                          ? "border-orange-500 bg-orange-50 text-orange-600"
+                          ? "border-orange-400 bg-orange-50 text-orange-400"
                           : "border-gray-300 bg-white hover:border-gray-400")
                       }
                     >
@@ -150,7 +150,7 @@ export default function ContactPage({}) {
         id="faq"
         className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16"
       >
-        <h2 className="mb-6 text-center text-2xl font-bold text-orange-500 sm:mb-8 sm:text-3xl">
+        <h2 className="mb-6 text-center text-2xl font-bold text-orange-400 sm:mb-8 sm:text-3xl">
           Frequently Asked Questions
         </h2>
         <div className="space-y-3 sm:space-y-4">
@@ -174,7 +174,7 @@ export default function ContactPage({}) {
         id="team"
         className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-20"
       >
-        <h2 className="mb-6 text-center text-2xl font-bold text-orange-500 sm:mb-10 sm:text-3xl">
+        <h2 className="mb-6 text-center text-2xl font-bold text-orange-400 sm:mb-10 sm:text-3xl">
           Meet Our Team
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
@@ -182,20 +182,20 @@ export default function ContactPage({}) {
             {
               name: "Er. Pradeep Kumar",
               role: "Purchase Head",
-              phone: "+91 9264928486",
-              email: "amit@xyz.com",
+              phone: "+91-9264928486",
+
             },
             {
               name: "Mrs. Pragya Kumari",
               role: "Sales Executive",
-              phone: "+91 9455277443",
-              email: "riya@xyz.com",
+              phone: "+91-9455277443",
+            
             },
             {
               name: "Mrs. Tusha Sharma",
               role: "HR Department",
               phone: "+91 90000 33333",
-              email: "sanjay@xyz.com",
+             
             },
           ].map((p) => (
             <article
@@ -212,7 +212,7 @@ export default function ContactPage({}) {
                   <p className="mt-1 text-xs sm:mt-2 sm:text-sm">
                     📞 {p.phone}
                   </p>
-                  <p className="text-xs sm:text-sm">✉️ {p.email}</p>
+                  <p className="text-xs sm:text-sm"> {p.email}</p>
                 </div>
               </div>
             </article>

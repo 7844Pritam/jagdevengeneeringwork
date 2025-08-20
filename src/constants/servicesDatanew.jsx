@@ -169,7 +169,7 @@ const servicesdata = [
   },
   {
     "id": 4,
-    "title": "Industrial Shed",
+    "title": "",
     "image": shed1,
     "description": "Reliable and strong industrial sheds tailored to your operational needs.",
     "middleTest": "Application of Industrial Shed's",
