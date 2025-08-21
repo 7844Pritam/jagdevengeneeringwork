@@ -44,7 +44,7 @@ export default function ContactPage({}) {
                     Mon–Fri | 09:00–18:00
                   </p>
                 </div>
-                
+                  
               
                 {/* ...other info blocks */}
               </div>
@@ -183,7 +183,7 @@ export default function ContactPage({}) {
             {
               name: "Mrs. Tusha Sharma",
               role: "HR Department",
-              phone: "+91 90000 33333",
+              phone: "+91-9450766113",
              
             },
           ].map((p) => (

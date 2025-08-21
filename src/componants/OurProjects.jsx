@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import MyHeading from "./MyHeadaing";
 import img1 from "../assets/Project2.jpeg";
-
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
 const projects = [
   {
     title: "Steel Structure Factory",
@@ -21,13 +22,13 @@ const projects = [
     title: "Vrindavan Project",
     location: "Vrindavan, Mathura UP",
     area: "15,000 sq.ft",
-    img: "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/ajagdev%2FWhatsApp%20Image%202025-05-20%20at%209.44.11%20PM.jpeg?alt=media&token=dc0decdc-5137-43f9-a44e-6f65cac1be62",
+    img: img3
   },
   {
     title: "Kamlapur Project",
     location: "Kamlapur, UP",
     area: "10,000 sq.ft",
-    img: "https://firebasestorage.googleapis.com/v0/b/perdaycoaching.appspot.com/o/ajagdev%2FWhatsApp%20Image%202025-05-20%20at%209.45.28%20PM.jpeg?alt=media&token=c1fc909c-ad05-4565-898d-315d1a74ce6d",
+    img: img4
   },
 ];
 
