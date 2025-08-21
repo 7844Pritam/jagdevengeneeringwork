@@ -57,23 +57,10 @@ const CompanyProfile = () => {
             Company Profile
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 text-justify">
-            JEW reckoned as one of the noted manufacturers and suppliers in the
-            industry. Our comprehensive range includes Pre-Engineered Building
-            System, Primary Framing System, Secondary Framing System, JEW Hi-Rib
-            Roofing, Clip Cook Roofing, Flashing and Trims, Turbo Vents, Louvers,
-            Lay-in-Tile, Lay-in-Tile (Gypsum), Roll Forming Machines and others. All
-            our range of products are fabricated using high grade raw materials
-            which are purchased from trusted and reliable vendors present in the
-            market.
+            JEW Steel Pvt. Ltd. is a leading name in the field of Pre-Engineered Buildings (PEB), Roofing Solutions, and Steel Structures. With years of expertise and innovation, we specialize in delivering high-quality, cost-effective, and sustainable building solutions tailored to diverse industrial, commercial, and residential needs.Our product portfolio includes Pre-Engineered Building Systems, Primary & Secondary Framing Systems, and Roll Forming Machines. Every product is manufactured using premium-grade raw materials and advanced technology, ensuring durability, precision, and long-lasting performance.
           </p>
           <p className="text-gray-700 leading-relaxed text-justify">
-            Our company has enhanced extensively under the supervision of our well
-            qualified and skilled team members. Their hard work and constant efforts
-            have taken the organization to new heights of success. We strongly
-            believe in providing positive client satisfaction. Our customer-centric
-            approach has been appreciated among our wide client base spread all
-            across the world. The complete range of our products are extremely
-            demanded for its optimum quality.
+            From industrial sheds, warehouses, factories, multi-storey steel buildings, to customized roofing and cladding systems, we provide end-to-end solutions—from design and manufacturing to on-site installation.With a strong presence in Lucknow and across India, JEW Steel Pvt. Ltd. has established itself as a trusted partner for businesses looking for reliable, fast, and economical construction solutions.Our Vision: To be recognized as a leader in sustainable steel building solutions, contributing to the growth of modern infrastructure in India.Our Mission: To deliver innovative, durable, and cost-effective PEB and roofing solutions while ensuring customer satisfaction and fostering long-term partnerships.
           </p>
         </div>
       </div>

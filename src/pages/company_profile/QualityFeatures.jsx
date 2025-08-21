@@ -11,10 +11,10 @@ const QualityFeatures = () => {
         {/* Text Content */}
         <div>
           <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            GI SHEET SOLUTION
+            ROOFING SHEET SOLUTION
           </h2>
-          <p className="text-black text-lg mb-6">
-            At any case we never compromise in our quality part of our products and follow strict total quality checks at our testing units. These steps help us to make sure that our products have high durability and fine finishing.
+          <p className="text-black text-small mb-6">
+            we provide high-quality roofing sheet solutions designed to deliver durability, strength, and aesthetic appeal. Our roofing sheets are manufactured using premium raw materials and advanced roll-forming technology, ensuring long-lasting performance in diverse weather conditions.Whether it’s for industrial sheds, warehouses, factories, commercial complexes, or residential projects, our roofing sheets are engineered to provide maximum protection, leak-proof performance, and superior load-bearing capacity.
           </p>
 
           <ul className="space-y-4 text-black-900 font-semibold">

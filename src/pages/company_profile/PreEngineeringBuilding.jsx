@@ -20,22 +20,14 @@ const PreEngineeringBuilding = () => {
           <h2 className="text-2xl font-bold text-orange-400 mb-4">
             PRE ENGINEERING BUILDING
           </h2>
-          <p className="mb-4 leading-relaxed text-lg">
-            Technological improvements over the year have contributed immensely
-            to the enhancement of quality of life through various new products
-            and services. One such revolution was the pre-engineered buildings
-            through its origin can be traced back to 960's it's potential has
-            been felt only during the recent years. This was mainly due to the
-            development of technology, which helped in computerizing the design.
+          <p className="mb-4 leading-relaxed text-small text-justify">
+            Pre-Engineered Building (PEB) technology is a revolutionary approach to modern construction where every component of a steel structure is designed, engineered, and fabricated in a controlled factory environment, then transported and assembled at the project site. This technology not only ensures faster project execution compared to conventional construction methods but also guarantees precision, durability, and cost-effectiveness.
           </p>
-          <p className="leading-relaxed text-lg">
-            Although PEB systems are extensively used in industrials and many
-            other non-residential constructions worldwide, it is relatively a
-            new concept in India. These concepts were introduced to the Indian
-            markets later in the late 1985 with the opening up of the economy
-            and several multinationals setting up their projects. Although
-            Indian manufacturers are trying to catch up; the JE Works has
-            already made it a part of its product.
+          <p className="leading-relaxed text-small text-justify">
+            At JEW Steel Pvt. Ltd., we utilize advanced design software and state-of-the-art manufacturing facilities to produce high-quality framing systems and building components that meet international standards. PEBs are highly versatile and can be customized to suit a wide range of applications, including warehouses, industrial sheds, factories, multi-storey buildings, showrooms, cold storage units, and commercial complexes. The use of high-tensile steel, corrosion-resistant coatings, and innovative engineering practices ensures that our PEB structures are not only strong but also long-lasting with minimal maintenance.
+          </p>
+          <p className="leading-relaxed text-small text-justify">
+           Furthermore, this construction method is eco-friendly, as it reduces material wastage, promotes recyclability, and supports energy efficiency through smart roofing and ventilation options. By adopting PEB technology, businesses benefit from rapid construction timelines, reduced investment costs, and highly reliable infrastructure solutions, making it the preferred choice for modern industries across India.
           </p>
         </div>
       </div>
