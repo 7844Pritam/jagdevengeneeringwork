@@ -1,41 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { collection, getDocs, doc, setDoc, deleteDoc } from "firebase/firestore";
-import { Save, Search, Trash2, Reply, Check, Badge } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card";
-import { Input } from "../components/Input";
-import { Button } from "../components/Button";
-import { TableBody, TableCell, TableHead, TableHeader,Table, TableRow } from "../components/Table";
+import React, { useState, useEffect } from "react";
+import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../../firebasedb";
+import { Search, Mail, Phone, Trash2, CheckCircle, Reply } from "lucide-react";
+import { Button } from "../components/Button";
+import { Badge } from "../components/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/Table";
+import { Skeleton } from "../components/Skeleton";
 
 function AdminContact() {
-  const [contactData, setContactData] = useState({
-    companyName: "Your Company Name",
-    address: "123 Business Street, City, State 12345",
-    phone: "+1 (555) 123-4567",
-    email: "contact@yourcompany.com",
-    workingHours: "Monday - Friday: 9:00 AM - 6:00 PM",
-    description:
-      "We're here to help! Contact us for any inquiries about our services and products.",
-    socialMedia: {
-      facebook: "https://facebook.com/yourcompany",
-      twitter: "https://twitter.com/yourcompany",
-      linkedin: "https://linkedin.com/company/yourcompany",
-      instagram: "https://instagram.com/yourcompany",
-    },
-  });
-
   const [messages, setMessages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
   const [selectedMessage, setSelectedMessage] = useState(null);
-  const [replyText, setReplyText] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch messages from Firestore
   useEffect(() => {
     const fetchMessages = async () => {
       try {
+        setIsLoading(true);
         const querySnapshot = await getDocs(collection(db, "consultations"));
         const messageList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -43,49 +27,39 @@ function AdminContact() {
           email: doc.data().email,
           phone: doc.data().phone,
           message: doc.data().message,
+          inquiryType: doc.data().inquiryType || "General",
           date: new Date(doc.data().date).toISOString().split("T")[0],
           status: doc.data().status || "New",
         }));
-        console.log("aa gaya",messageList)
+        // Sort by date descending (newest first)
+        messageList.sort((a, b) => new Date(b.date) - new Date(a.date));
         setMessages(messageList);
-        console.log(messages)
       } catch (error) {
         console.error("Error fetching messages from Firestore:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchMessages();
   }, []);
 
-  const handleSave = (e唐三e) => {
-    e.preventDefault();
-    alert("Contact information updated successfully!");
-  };
-
-  const filteredMessages = messages.filter((message) => {
+  const filteredMessages = messages.filter((msg) => {
     const matchesSearch =
-      message.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      message.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      message.message.toLowerCase().includes(searchTerm.toLowerCase());
+      msg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      msg.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      msg.message.toLowerCase().includes(searchTerm.toLowerCase());
 
-    const matchesStatus = statusFilter === "All" || message.status === statusFilter;
+    const matchesStatus = statusFilter === "All" || msg.status === statusFilter;
 
     return matchesSearch && matchesStatus;
   });
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await setDoc(
-        doc(db, "consultations", id),
-        { status: newStatus },
-        { merge: true }
-      );
-      setMessages(
-        messages.map((message) =>
-          message.id === id ? { ...message, status: newStatus } : message
-        )
-      );
-      if (selectedMessage && selectedMessage.id === id) {
-        setSelectedMessage({ ...selectedMessage, status: newStatus });
+      await updateDoc(doc(db, "consultations", id), { status: newStatus });
+      setMessages(msgs => msgs.map(msg => msg.id === id ? { ...msg, status: newStatus } : msg));
+      if (selectedMessage?.id === id) {
+        setSelectedMessage(prev => ({ ...prev, status: newStatus }));
       }
     } catch (error) {
       console.error("Error updating status:", error);
@@ -93,220 +67,219 @@ function AdminContact() {
   };
 
   const handleDeleteMessage = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this message?")) return;
     try {
       await deleteDoc(doc(db, "consultations", id));
-      setMessages(messages.filter((message) => message.id !== id));
-      if (selectedMessage && selectedMessage.id === id) {
-        setSelectedMessage(null);
-      }
+      setMessages(msgs => msgs.filter(msg => msg.id !== id));
+      if (selectedMessage?.id === id) setSelectedMessage(null);
     } catch (error) {
       console.error("Error deleting message:", error);
     }
   };
 
-  const handleSendReply = () => {
-    if (!replyText.trim()) return;
-
-    // In a real app, this would send an email
-    handleStatusChange(selectedMessage.id, "Replied");
-    setReplyText("");
-    alert(`Reply sent to ${selectedMessage.name}`);
+  const handleReply = (email) => {
+    window.location.href = `mailto:${email}`;
+    // Optimistically update status to Replied
+    if (selectedMessage) {
+      handleStatusChange(selectedMessage.id, "Replied");
+    }
   };
 
   return (
-<div className="p-6 space-y-6">
-  {/* Page Title */}
-  <h1 className="text-3xl font-bold">Contact Us Management</h1>
+    <div className="p-8 max-w-7xl mx-auto space-y-8">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Inquiries</h1>
+          <p className="text-gray-500 mt-1">Manage your incoming messages and consultations.</p>
+        </div>
+        <div className="flex items-center gap-3 bg-white p-1 rounded-xl border border-gray-200 shadow-sm">
+          {["All", "New", "Replied", "Resolved"].map((status) => (
+            <button
+              key={status}
+              onClick={() => setStatusFilter(status)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${statusFilter === status
+                ? "bg-orange-50 text-orange-600 shadow-sm"
+                : "text-gray-600 hover:bg-gray-50"
+                }`}
+            >
+              {status}
+            </button>
+          ))}
+        </div>
+      </div>
 
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    {/* Messages Management */}
-    <Card className="lg:col-span-2 rounded-2xl shadow-sm hover:shadow-md border border-gray-200 transition">
-      <CardHeader>
-        <CardTitle className="text-lg font-semibold">Contact Messages</CardTitle>
-      </CardHeader>
-
-      <CardContent>
-        {/* Search + Filters */}
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
-          <div className="relative flex-1">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-            <Input
-              type="search"
-              placeholder="Search messages..."
-              className="pl-8 rounded-md border-gray-300 focus:ring-2 focus:ring-primary"
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Message List */}
+        <div className="lg:col-span-2 space-y-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search by name, email, or content..."
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-100 outline-none transition shadow-sm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <select
-            className="p-2 border rounded-md text-sm bg-white focus:ring-2 focus:ring-primary"
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-          >
-            <option value="All">All Status</option>
-            <option value="New">New</option>
-            <option value="Replied">Replied</option>
-            <option value="Resolved">Resolved</option>
-          </select>
-        </div>
 
-        {/* Messages Table */}
-        <div className="border rounded-md overflow-hidden">
-          <Table>
-            <TableHeader className="bg-gray-50">
-              <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Message</TableHead>
-                <TableHead>Date</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredMessages.length > 0 ? (
-                filteredMessages.map((message) => (
-                  <TableRow
-                    key={message.id}
-                    className="cursor-pointer hover:bg-gray-50 transition"
-                  >
-                    <TableCell
-                      className="font-medium"
-                      onClick={() => setSelectedMessage(message)}
-                    >
-                      {message.name}
-                    </TableCell>
-                    <TableCell
-                      onClick={() => setSelectedMessage(message)}
-                      className="text-gray-600"
-                    >
-                      {message.message.substring(0, 50)}...
-                    </TableCell>
-                    <TableCell onClick={() => setSelectedMessage(message)}>
-                      {message.date}
-                    </TableCell>
-                    <TableCell>
-                      <Badge
-                        variant={
-                          message.status === "New"
-                            ? "default"
-                            : message.status === "Replied"
-                            ? "secondary"
-                            : "outline"
-                        }
-                      >
-                        {message.status}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <div className="flex justify-end gap-2">
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          onClick={() =>
-                            handleStatusChange(message.id, "Resolved")
-                          }
-                          title="Mark as Resolved"
-                        >
-                          <Check className="h-4 w-4 text-green-500" />
-                        </Button>
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          onClick={() => handleDeleteMessage(message.id)}
-                          title="Delete"
-                        >
-                          <Trash2 className="h-4 w-4 text-red-500" />
-                        </Button>
-                      </div>
-                    </TableCell>
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader className="bg-gray-50">
+                  <TableRow>
+                    <TableHead>Sender</TableHead>
+                    <TableHead>Subject</TableHead>
+                    <TableHead>Date</TableHead>
+                    <TableHead>Status</TableHead>
                   </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell colSpan={5} className="text-center py-6 text-gray-500">
-                    No messages found
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
+                </TableHeader>
+                <TableBody>
+                  {isLoading ? (
+                    [...Array(5)].map((_, i) => (
+                      <TableRow key={i}>
+                        <TableCell><Skeleton className="h-4 w-32 mb-1" /><Skeleton className="h-3 w-24" /></TableCell>
+                        <TableCell><Skeleton className="h-4 w-20 mb-1" /><Skeleton className="h-3 w-40" /></TableCell>
+                        <TableCell><Skeleton className="h-4 w-24" /></TableCell>
+                        <TableCell><Skeleton className="h-6 w-16 rounded-full" /></TableCell>
+                      </TableRow>
+                    ))
+                  ) : filteredMessages.length > 0 ? (
+                    filteredMessages.map((msg) => (
+                      <TableRow
+                        key={msg.id}
+                        onClick={() => setSelectedMessage(msg)}
+                        className={`cursor-pointer hover:bg-orange-50/50 transition ${selectedMessage?.id === msg.id ? "bg-orange-50" : ""
+                          }`}
+                      >
+                        <TableCell className="font-medium">
+                          <div className="text-gray-900">{msg.name}</div>
+                          <div className="text-xs text-gray-500">{msg.email}</div>
+                        </TableCell>
+                        <TableCell>
+                          <div className="text-gray-900 font-medium">{msg.inquiryType}</div>
+                          <div className="text-xs text-gray-500 truncate max-w-[200px]">{msg.message}</div>
+                        </TableCell>
+                        <TableCell className="text-gray-500">{msg.date}</TableCell>
+                        <TableCell>
+                          <Badge
+                            variant={
+                              msg.status === "New" ? "default" :
+                                msg.status === "Resolved" ? "secondary" : "outline"
+                            }
+                            className={msg.status === "New" ? "bg-orange-500 hover:bg-orange-600" : ""}
+                          >
+                            {msg.status}
+                          </Badge>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  ) : (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center py-12 text-gray-500">
+                        <div className="flex flex-col items-center justify-center">
+                          <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center mb-3">
+                            <Search className="h-6 w-6 text-gray-400" />
+                          </div>
+                          <p>No messages found matching your criteria.</p>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  )}
+                </TableBody>
+              </Table>
+            </div >
+          </div >
+        </div >
 
-        {/* Message Detail + Reply */}
-        {selectedMessage && (
-          <div className="mt-6 border rounded-xl shadow-sm p-4 bg-white">
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h3 className="font-semibold text-lg">
-                  {selectedMessage.subject || "Message Detail"}
-                </h3>
-                <p className="text-sm text-gray-500">
-                  From: {selectedMessage.name} ({selectedMessage.email})
-                </p>
-                <p className="text-sm text-gray-500">
-                  Phone: {selectedMessage.phone}
-                </p>
-                <p className="text-sm text-gray-500">
-                  Date: {selectedMessage.date}
-                </p>
+        {/* Message Detail */}
+        < div className="lg:col-span-1" >
+          {
+            selectedMessage ? (
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm sticky top-6" >
+                <div className="p-6 border-b border-gray-100 flex justify-between items-start">
+                  <div>
+                    <h2 className="text-lg font-bold text-gray-900">Message Details</h2>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Received on {selectedMessage.date}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleDeleteMessage(selectedMessage.id)}
+                    className="text-gray-400 hover:text-red-500 transition p-1 hover:bg-red-50 rounded-lg"
+                    title="Delete Message"
+                  >
+                    <Trash2 className="h-5 w-5" />
+                  </button>
+                </div>
+
+                <div className="p-6 space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold text-lg">
+                        {selectedMessage.name.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{selectedMessage.name}</div>
+                        <div className="text-sm text-gray-500">{selectedMessage.email}</div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="p-3 bg-gray-50 rounded-xl">
+                        <div className="text-gray-500 text-xs mb-1">Phone</div>
+                        <div className="font-medium text-gray-900">{selectedMessage.phone}</div>
+                      </div>
+                      <div className="p-3 bg-gray-50 rounded-xl">
+                        <div className="text-gray-500 text-xs mb-1">Inquiry Type</div>
+                        <div className="font-medium text-gray-900">{selectedMessage.inquiryType}</div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="text-sm font-medium text-gray-700 mb-2">Message</div>
+                      <div className="p-4 bg-gray-50 rounded-xl text-gray-600 text-sm leading-relaxed">
+                        {selectedMessage.message}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-gray-100 space-y-4">
+                    <h3 className="text-sm font-semibold text-gray-900">Quick Actions</h3>
+                    <div className="flex gap-2">
+                      {selectedMessage.status !== "Resolved" && (
+                        <button
+                          onClick={() => handleStatusChange(selectedMessage.id, "Resolved")}
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition"
+                        >
+                          <Check className="h-4 w-4" />
+                          Mark Resolved
+                        </button>
+                      )}
+                      <a
+                        href={`mailto:${selectedMessage.email}`}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-orange-500 text-sm font-medium text-white hover:bg-orange-600 shadow-sm transition"
+                      >
+                        <Reply className="h-4 w-4" />
+                        Reply via Email
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <Badge
-                variant={
-                  selectedMessage.status === "New"
-                    ? "default"
-                    : selectedMessage.status === "Replied"
-                    ? "secondary"
-                    : "outline"
-                }
-              >
-                {selectedMessage.status}
-              </Badge>
-            </div>
-
-            <div className="bg-gray-50 p-4 rounded-md mb-4">
-              <p className="text-gray-700">{selectedMessage.message}</p>
-            </div>
-
-            <div className="space-y-4">
-              <textarea
-                className="w-full p-3 border rounded-md text-sm focus:ring-2 focus:ring-primary"
-                rows="4"
-                placeholder="Type your reply here..."
-                value={replyText}
-                onChange={(e) => setReplyText(e.target.value)}
-              />
-              <div className="flex flex-wrap gap-2">
-                <Button
-                  onClick={handleSendReply}
-                  disabled={!replyText.trim()}
-                >
-                  <Reply className="mr-2 h-4 w-4" />
-                  Send Reply
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() =>
-                    handleStatusChange(selectedMessage.id, "Resolved")
-                  }
-                >
-                  Mark as Resolved
-                </Button>
-                <Button
-                  variant="outline"
-                  className="text-red-500"
-                  onClick={() => setSelectedMessage(null)}
-                >
-                  Close
-                </Button>
+            ) : (
+              <div className="bg-gray-50 rounded-2xl border border-gray-200 border-dashed p-8 text-center h-64 flex flex-col items-center justify-center text-gray-500">
+                <div className="h-12 w-12 rounded-full bg-white border border-gray-200 flex items-center justify-center mb-3 shadow-sm">
+                  <Reply className="h-5 w-5 text-gray-400" />
+                </div>
+                <p className="font-medium">Select a message</p>
+                <p className="text-sm mt-1">View details and reply to inquiries</p>
               </div>
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  </div>
-</div>
-
+            )
+          }
+        </div >
+      </div >
+    </div >
   );
 }
 

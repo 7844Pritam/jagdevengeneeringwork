@@ -16,7 +16,7 @@ import { Button } from "./Button";
 
 const initialNavigation = [
   { name: "Dashboard", href: "/admin", icon: Home },
-  { name: "Blogs", href: "/admin/blogs", icon: Package },
+  // { name: "Blogs", href: "/admin/blogs", icon: Package },
   { name: "Contacts", href: "/admin/contact", icon: Contact },
   { name: "Carrer", href: "/admin/carrers", icon: Workflow },
 

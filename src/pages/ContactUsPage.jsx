@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { db } from "../../firebasedb";
+import { collection, addDoc } from "firebase/firestore";
 
 const chips = ["Booking", "General", "Quotatuion", "Corporate", "Others"];
 import heroUrl from "../assets/about-2.jpg";
 
-export default function ContactPage({}) {
+export default function ContactPage({ }) {
   const [activeChip, setActiveChip] = useState("General");
   const [agree, setAgree] = useState(false);
 
@@ -12,7 +14,7 @@ export default function ContactPage({}) {
       {/* Hero section */}
       <section id="contact" className="mx-auto mt-4 max-w-7xl px-4 sm:px-6">
         <div className="relative grid grid-cols-1 md:gap-6 md:grid-cols-3">
-      
+
           <div className=" mb-10 md:mb-0 relative col-span-2 overflow-hidden rounded-2xl">
             <img
               src="https://moonwalkinfra.com/wp-content/uploads/2024/07/Fabricating.jpg"
@@ -44,8 +46,8 @@ export default function ContactPage({}) {
                     Mon–Fri | 09:00–18:00
                   </p>
                 </div>
-                  
-              
+
+
                 {/* ...other info blocks */}
               </div>
             </div>
@@ -61,19 +63,41 @@ export default function ContactPage({}) {
             </p>
 
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                alert("Thanks! We'll get back to you soon.");
+                const formData = new FormData(e.target);
+                const data = {
+                  fullName: `${formData.get("firstName")} ${formData.get("lastName")}`,
+                  email: formData.get("email"),
+                  phone: formData.get("phone"),
+                  country: formData.get("country"),
+                  message: formData.get("message"),
+                  inquiryType: activeChip,
+                  agree: agree,
+                  date: new Date().toISOString(),
+                  status: "New",
+                };
+
+                try {
+                  await addDoc(collection(db, "consultations"), data);
+                  alert("Thanks! We'll get back to you soon.");
+                  e.target.reset();
+                  setActiveChip("General");
+                  setAgree(false);
+                } catch (error) {
+                  console.error("Error submitting form: ", error);
+                  alert("Something went wrong. Please try again.");
+                }
               }}
               className="mt-4 space-y-3 sm:mt-6 sm:space-y-4"
             >
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <Input placeholder="First Name" />
-                <Input placeholder="Last Name" />
-                <Input placeholder="Country" />
-                <Input placeholder="Phone Number" />
+                <Input name="firstName" placeholder="First Name" required />
+                <Input name="lastName" placeholder="Last Name" required />
+                <Input name="country" placeholder="Country" />
+                <Input name="phone" placeholder="Phone Number" required />
                 <div className="sm:col-span-2">
-                  <Input type="email" placeholder="Email Address" />
+                  <Input name="email" type="email" placeholder="Email Address" required />
                 </div>
               </div>
 
@@ -101,7 +125,7 @@ export default function ContactPage({}) {
                 </div>
               </div>
 
-              <Textarea placeholder="Message" rows={4} />
+              <Textarea name="message" placeholder="Message" rows={4} required />
 
               <label className="flex items-start gap-2 text-xs sm:text-sm">
                 <input
@@ -130,7 +154,7 @@ export default function ContactPage({}) {
         className="mx-auto mt-8 max-w-7xl px-4 sm:mt-12 sm:px-6"
       >
         <div className="overflow-hidden rounded-2xl shadow ring-1 ring-gray-200">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1780.0244678044703!2d81.00402985628789!3d26.838395807765625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3b392eefb69%3A0x42b82060e5a9eb23!2sJagdev%20Engineering%20Works%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1749225370229!5m2!1sen!2sin " className='w-full' height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1780.0244678044703!2d81.00402985628789!3d26.838395807765625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3b392eefb69%3A0x42b82060e5a9eb23!2sJagdev%20Engineering%20Works%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1749225370229!5m2!1sen!2sin " className='w-full' height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
 
@@ -178,13 +202,13 @@ export default function ContactPage({}) {
               name: "Mrs. Pragya Kumari",
               role: "Sales Executive",
               phone: "+91-9455277443",
-            
+
             },
             {
               name: "Mrs. Tusha Sharma",
               role: "HR Department",
               phone: "+91-9450766113",
-             
+
             },
           ].map((p) => (
             <article
