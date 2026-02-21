@@ -1,7 +1,7 @@
 {
     "functions": {
-        "*.php": {
-            "runtime": "vercel-php@0.7.0"
+        "api/*.php": {
+            "runtime": "vercel-php@0.11.0"
         }
     },
     "routes": [
@@ -10,20 +10,16 @@
             "dest": "/assets/$1"
         },
         {
-            "src": "/includes/(.*)",
-            "dest": "/includes/$1"
-        },
-        {
             "src": "/(.*).php",
-            "dest": "/$1.php"
+            "dest": "/api/$1.php"
         },
         {
             "src": "/",
-            "dest": "/index.php"
+            "dest": "/api/index.php"
         },
         {
             "src": "/(.*)",
-            "dest": "/$1.php"
+            "dest": "/api/$1.php"
         }
     ]
 }
