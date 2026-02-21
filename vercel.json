@@ -21,5 +21,7 @@
             "src": "/(.*)",
             "dest": "/api/$1.php"
         }
-    ]
+    ],
+    "buildCommand": null,
+    "outputDirectory": null
 }
