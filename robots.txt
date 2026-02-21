@@ -1,0 +1,26 @@
+# robots.txt for JEW Steel Pvt. Ltd.
+# https://www.jewsteel.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+
+# Allow CSS, JS, and Images
+Allow: /assets/*.css
+Allow: /assets/*.js
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.png
+Allow: /assets/*.svg
+Allow: /assets/*.webp
+Allow: /assets/*.avif
+
+# Sitemap location
+Sitemap: https://www.jewsteel.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

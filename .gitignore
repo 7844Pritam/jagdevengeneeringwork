@@ -1,0 +1,9 @@
+.DS_Store
+.vscode/
+.idea/
+.gemini/
+*.zip
+*.rar
+*.log
+node_modules/
+vendor/
